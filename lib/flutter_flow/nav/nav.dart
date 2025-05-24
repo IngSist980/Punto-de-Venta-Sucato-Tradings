@@ -44,6 +44,16 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: HomePageWidget.routeName,
           path: HomePageWidget.routePath,
           builder: (context, params) => HomePageWidget(),
+        ),
+        FFRoute(
+          name: Adm001Widget.routeName,
+          path: Adm001Widget.routePath,
+          builder: (context, params) => Adm001Widget(),
+        ),
+        FFRoute(
+          name: Adm002Widget.routeName,
+          path: Adm002Widget.routePath,
+          builder: (context, params) => Adm002Widget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

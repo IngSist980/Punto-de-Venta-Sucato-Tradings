@@ -4,3 +4,6 @@ export '/pages/admin/adm_001/adm001_widget.dart' show Adm001Widget;
 export '/pages/admin/adm_002/adm002_widget.dart' show Adm002Widget;
 export '/pages/admin/adm_005/adm005_widget.dart' show Adm005Widget;
 export '/pages/admin/adm_006/adm006_widget.dart' show Adm006Widget;
+export '/pages/admin/adm_003/adm003_widget.dart' show Adm003Widget;
+export '/pages/punto_venta/pv_002/pv002_widget.dart' show Pv002Widget;
+export '/pages/admin/adm_004/adm004_widget.dart' show Adm004Widget;

@@ -575,10 +575,6 @@ class _Adm006WidgetState extends State<Adm006Widget> {
                                   safeSetState(
                                       () => _model.checkboxValue1 = newValue!);
                                 },
-                                side: BorderSide(
-                                  width: 2,
-                                  color: Color(0x00000000),
-                                ),
                                 activeColor:
                                     FlutterFlowTheme.of(context).primary,
                               ),
@@ -663,10 +659,6 @@ class _Adm006WidgetState extends State<Adm006Widget> {
                                   safeSetState(
                                       () => _model.checkboxValue2 = newValue!);
                                 },
-                                side: BorderSide(
-                                  width: 2,
-                                  color: Color(0x00000000),
-                                ),
                                 activeColor:
                                     FlutterFlowTheme.of(context).primary,
                               ),
@@ -751,10 +743,6 @@ class _Adm006WidgetState extends State<Adm006Widget> {
                                   safeSetState(
                                       () => _model.checkboxValue3 = newValue!);
                                 },
-                                side: BorderSide(
-                                  width: 2,
-                                  color: Color(0x00000000),
-                                ),
                                 activeColor:
                                     FlutterFlowTheme.of(context).primary,
                               ),
@@ -839,10 +827,6 @@ class _Adm006WidgetState extends State<Adm006Widget> {
                                   safeSetState(
                                       () => _model.checkboxValue4 = newValue!);
                                 },
-                                side: BorderSide(
-                                  width: 2,
-                                  color: Color(0x00000000),
-                                ),
                                 activeColor:
                                     FlutterFlowTheme.of(context).primary,
                               ),
@@ -978,10 +962,6 @@ class _Adm006WidgetState extends State<Adm006Widget> {
                                   safeSetState(
                                       () => _model.checkboxValue5 = newValue!);
                                 },
-                                side: BorderSide(
-                                  width: 2,
-                                  color: Color(0x00000000),
-                                ),
                                 activeColor:
                                     FlutterFlowTheme.of(context).primary,
                               ),

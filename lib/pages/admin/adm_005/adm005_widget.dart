@@ -1069,13 +1069,17 @@ class _Adm005WidgetState extends State<Adm005Widget> {
                                                               .checkboxValue1 =
                                                           newValue!);
                                                     },
-                                                    side: BorderSide(
-                                                      width: 2,
-                                                      color:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .secondaryText,
-                                                    ),
+                                                    side: (FlutterFlowTheme.of(
+                                                                    context)
+                                                                .secondaryText !=
+                                                            null)
+                                                        ? BorderSide(
+                                                            width: 2,
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .secondaryText,
+                                                          )
+                                                        : null,
                                                     activeColor:
                                                         FlutterFlowTheme.of(
                                                                 context)
@@ -1161,13 +1165,17 @@ class _Adm005WidgetState extends State<Adm005Widget> {
                                                               .checkboxValue2 =
                                                           newValue!);
                                                     },
-                                                    side: BorderSide(
-                                                      width: 2,
-                                                      color:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .secondaryText,
-                                                    ),
+                                                    side: (FlutterFlowTheme.of(
+                                                                    context)
+                                                                .secondaryText !=
+                                                            null)
+                                                        ? BorderSide(
+                                                            width: 2,
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .secondaryText,
+                                                          )
+                                                        : null,
                                                     activeColor:
                                                         FlutterFlowTheme.of(
                                                                 context)
@@ -1253,13 +1261,17 @@ class _Adm005WidgetState extends State<Adm005Widget> {
                                                               .checkboxValue3 =
                                                           newValue!);
                                                     },
-                                                    side: BorderSide(
-                                                      width: 2,
-                                                      color:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .secondaryText,
-                                                    ),
+                                                    side: (FlutterFlowTheme.of(
+                                                                    context)
+                                                                .secondaryText !=
+                                                            null)
+                                                        ? BorderSide(
+                                                            width: 2,
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .secondaryText,
+                                                          )
+                                                        : null,
                                                     activeColor:
                                                         FlutterFlowTheme.of(
                                                                 context)
@@ -1345,13 +1357,17 @@ class _Adm005WidgetState extends State<Adm005Widget> {
                                                               .checkboxValue4 =
                                                           newValue!);
                                                     },
-                                                    side: BorderSide(
-                                                      width: 2,
-                                                      color:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .secondaryText,
-                                                    ),
+                                                    side: (FlutterFlowTheme.of(
+                                                                    context)
+                                                                .secondaryText !=
+                                                            null)
+                                                        ? BorderSide(
+                                                            width: 2,
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .secondaryText,
+                                                          )
+                                                        : null,
                                                     activeColor:
                                                         FlutterFlowTheme.of(
                                                                 context)

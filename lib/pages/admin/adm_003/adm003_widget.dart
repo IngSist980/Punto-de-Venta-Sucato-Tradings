@@ -11,22 +11,6 @@ import 'package:google_fonts/google_fonts.dart';
 import 'adm003_model.dart';
 export 'adm003_model.dart';
 
-/// ADM-003	Como administrador, quiero registrar y gestionar clientes para
-/// facilitar las ventas recurrentes.
-///
-/// 1	Registro exitoso de un nuevo cliente.	En caso que el usuario
-/// administrador	Cuando ingrese los datos de un nuevo cliente (razón social,
-/// cédula jurídica, dirección, contacto, categoría).	El sistema guarda la
-/// información del cliente, asigna un código único y la muestra en la base de
-/// datos.
-/// 		2	Detección de cliente duplicado.	En caso que el usuario
-/// administrador	Cuando ingrese una cédula jurídica ya registrada en la base
-/// de datos.	El sistema muestra un mensaje de error indicando que el cliente
-/// ya existe y sugiere opciones para editar el registro existente.
-/// 		3	Edición de información de un cliente existente.	En caso que el usuario
-/// administrador	Cuando se necesite modificar la dirección o persona de
-/// contacto del cliente.	El sistema actualiza la información sin afectar el
-/// historial de transacciones y registra el cambio en un log de auditoría.
 class Adm003Widget extends StatefulWidget {
   const Adm003Widget({super.key});
 
@@ -177,6 +161,12 @@ class _Adm003WidgetState extends State<Adm003Widget> {
                                   Duration(milliseconds: 2000),
                                   () => safeSetState(() {}),
                                 ),
+                                onFieldSubmitted: (_) async {
+                                  safeSetState(() {
+                                    _model.textController1?.text =
+                                        _model.textController1.text;
+                                  });
+                                },
                                 autofocus: true,
                                 textCapitalization: TextCapitalization.words,
                                 textInputAction: TextInputAction.next,
@@ -299,6 +289,12 @@ class _Adm003WidgetState extends State<Adm003Widget> {
                                   Duration(milliseconds: 2000),
                                   () => safeSetState(() {}),
                                 ),
+                                onFieldSubmitted: (_) async {
+                                  safeSetState(() {
+                                    _model.textController2?.text =
+                                        _model.textController2.text;
+                                  });
+                                },
                                 autofocus: false,
                                 textInputAction: TextInputAction.next,
                                 obscureText: false,
@@ -410,6 +406,12 @@ class _Adm003WidgetState extends State<Adm003Widget> {
                                   Duration(milliseconds: 2000),
                                   () => safeSetState(() {}),
                                 ),
+                                onFieldSubmitted: (_) async {
+                                  safeSetState(() {
+                                    _model.textController3?.text =
+                                        _model.textController3.text;
+                                  });
+                                },
                                 autofocus: false,
                                 textCapitalization:
                                     TextCapitalization.sentences,

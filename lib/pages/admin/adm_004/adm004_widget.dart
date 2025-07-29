@@ -9,22 +9,6 @@ import 'package:google_fonts/google_fonts.dart';
 import 'adm004_model.dart';
 export 'adm004_model.dart';
 
-/// ADM-004	Como administrador, quiero generar facturas electrónicas para
-/// formalizar las ventas y cumplir con las normativas fiscales.
-///
-/// 1	Generación exitosa de una factura electrónica.	En caso que el usuario
-/// administrador	Cuando se registre una venta y se asocien los productos y el
-/// cliente.	El sistema genera la factura en formato digital con folio, fecha,
-/// productos, subtotal, impuestos (13% IVA), total y código de autorización
-/// del Ministerio de Hacienda.
-/// 		2	Validación de datos incompletos.	En caso que el usuario
-/// administrador	Cuando falte algún dato obligatorio como la cédula jurídica
-/// del cliente o detalle de productos.	El sistema muestra un mensaje de error
-/// indicando los campos faltantes y no permite la generación de la factura.
-/// 		3	Anulación de una factura.	En caso que el usuario administrador	Cuando
-/// una venta haya sido registrada con error y deba corregirse.	El sistema
-/// permite la anulación con justificación, genera una nota de crédito y
-/// refleja la corrección en el historial.
 class Adm004Widget extends StatefulWidget {
   const Adm004Widget({super.key});
 

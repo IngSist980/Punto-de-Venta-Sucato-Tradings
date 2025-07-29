@@ -8,14 +8,10 @@ import 'package:google_fonts/google_fonts.dart';
 import 'pv002_model.dart';
 export 'pv002_model.dart';
 
-/// PV-002  Generar facturas:	Como asistente de ventas quiero generar facturas
-/// electrónicas para cumplir con las normativas fiscales 	Facturación
-/// electrónica	Emisión de factura 	El cliente solicita factura 	Se procesa la
-/// misma 	El sistema emite factura con código y control de firma digital.
 class Pv002Widget extends StatefulWidget {
   const Pv002Widget({super.key});
 
-  static String routeName = 'PV-002';
+  static String routeName = 'PV002';
   static String routePath = '/pv002';
 
   @override

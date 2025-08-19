@@ -1,3 +1,4 @@
+import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -541,6 +542,12 @@ class _Adm003WidgetState extends State<Adm003Widget> {
                                         Duration(milliseconds: 2000),
                                         () => safeSetState(() {}),
                                       ),
+                                      onFieldSubmitted: (_) async {
+                                        safeSetState(() {
+                                          _model.textController4?.text =
+                                              _model.textController4.text;
+                                        });
+                                      },
                                       autofocus: false,
                                       textCapitalization:
                                           TextCapitalization.words,
@@ -682,6 +689,12 @@ class _Adm003WidgetState extends State<Adm003Widget> {
                                         Duration(milliseconds: 2000),
                                         () => safeSetState(() {}),
                                       ),
+                                      onFieldSubmitted: (_) async {
+                                        safeSetState(() {
+                                          _model.textController5?.text =
+                                              _model.textController5.text;
+                                        });
+                                      },
                                       autofocus: false,
                                       textInputAction: TextInputAction.next,
                                       obscureText: false,
@@ -927,8 +940,22 @@ class _Adm003WidgetState extends State<Adm003Widget> {
                                     ),
                                   ),
                                   FFButtonWidget(
-                                    onPressed: () {
-                                      print('Button pressed ...');
+                                    onPressed: () async {
+                                      await ClientesRecord.collection
+                                          .doc()
+                                          .set(createClientesRecordData(
+                                            razonSocial:
+                                                _model.textController1.text,
+                                            cedulaJuridica: int.tryParse(
+                                                _model.textController2.text),
+                                            direccion:
+                                                _model.textController3.text,
+                                            telefonoContacto: int.tryParse(
+                                                _model.textController5.text),
+                                            nombreContacto:
+                                                _model.textController4.text,
+                                            categoria: _model.dropDownValue,
+                                          ));
                                     },
                                     text: 'Guardar Cliente',
                                     options: FFButtonOptions(

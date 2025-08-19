@@ -439,7 +439,7 @@ class _Inv005WidgetState extends State<Inv005Widget> {
                                   ),
                                   Container(
                                     width: 80.0,
-                                    height: 24.0,
+                                    height: 31.2,
                                     decoration: BoxDecoration(
                                       color:
                                           FlutterFlowTheme.of(context).warning,
@@ -780,7 +780,7 @@ class _Inv005WidgetState extends State<Inv005Widget> {
                                   ),
                                   Container(
                                     width: 80.0,
-                                    height: 24.0,
+                                    height: 36.8,
                                     decoration: BoxDecoration(
                                       color:
                                           FlutterFlowTheme.of(context).success,
@@ -1121,7 +1121,7 @@ class _Inv005WidgetState extends State<Inv005Widget> {
                                   ),
                                   Container(
                                     width: 80.0,
-                                    height: 24.0,
+                                    height: 33.4,
                                     decoration: BoxDecoration(
                                       color: FlutterFlowTheme.of(context).error,
                                       borderRadius: BorderRadius.circular(12.0),

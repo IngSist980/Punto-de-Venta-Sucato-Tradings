@@ -542,7 +542,7 @@ class _Inv003WidgetState extends State<Inv003Widget> {
                                 ),
                                 Container(
                                   width: 80.0,
-                                  height: 24.0,
+                                  height: 29.5,
                                   decoration: BoxDecoration(
                                     color: Color(0xFFFF6B35),
                                     borderRadius: BorderRadius.circular(12.0),
@@ -885,7 +885,7 @@ class _Inv003WidgetState extends State<Inv003Widget> {
                                 ),
                                 Container(
                                   width: 80.0,
-                                  height: 24.0,
+                                  height: 26.2,
                                   decoration: BoxDecoration(
                                     color: Color(0xFFFFA726),
                                     borderRadius: BorderRadius.circular(12.0),
@@ -1227,7 +1227,7 @@ class _Inv003WidgetState extends State<Inv003Widget> {
                                 ),
                                 Container(
                                   width: 80.0,
-                                  height: 24.0,
+                                  height: 29.5,
                                   decoration: BoxDecoration(
                                     color: Colors.green,
                                     borderRadius: BorderRadius.circular(12.0),

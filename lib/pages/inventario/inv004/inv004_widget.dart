@@ -462,7 +462,7 @@ class _Inv004WidgetState extends State<Inv004Widget> {
                                                             .fromSTEB(8.0, 4.0,
                                                                 8.0, 4.0),
                                                     child: Container(
-                                                      height: 24.0,
+                                                      height: 29.5,
                                                       decoration: BoxDecoration(
                                                         color:
                                                             FlutterFlowTheme.of(
@@ -848,7 +848,7 @@ class _Inv004WidgetState extends State<Inv004Widget> {
                                                             .fromSTEB(8.0, 4.0,
                                                                 8.0, 4.0),
                                                     child: Container(
-                                                      height: 24.0,
+                                                      height: 35.7,
                                                       decoration: BoxDecoration(
                                                         color:
                                                             FlutterFlowTheme.of(
@@ -1232,7 +1232,7 @@ class _Inv004WidgetState extends State<Inv004Widget> {
                                                             .fromSTEB(8.0, 4.0,
                                                                 8.0, 4.0),
                                                     child: Container(
-                                                      height: 24.0,
+                                                      height: 35.7,
                                                       decoration: BoxDecoration(
                                                         color:
                                                             FlutterFlowTheme.of(

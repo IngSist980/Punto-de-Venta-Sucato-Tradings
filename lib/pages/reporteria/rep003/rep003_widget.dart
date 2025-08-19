@@ -72,6 +72,7 @@ class _Rep003WidgetState extends State<Rep003Widget> {
                     fontStyle:
                         FlutterFlowTheme.of(context).headlineLarge.fontStyle,
                   ),
+                  fontSize: 18.0,
                   letterSpacing: 0.0,
                   fontWeight:
                       FlutterFlowTheme.of(context).headlineLarge.fontWeight,
@@ -154,6 +155,7 @@ class _Rep003WidgetState extends State<Rep003Widget> {
                                             .titleMedium
                                             .fontStyle,
                                       ),
+                                      fontSize: 16.0,
                                       letterSpacing: 0.0,
                                       fontWeight: FontWeight.w600,
                                       fontStyle: FlutterFlowTheme.of(context)

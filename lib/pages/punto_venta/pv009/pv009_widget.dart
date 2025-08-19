@@ -56,6 +56,7 @@ class _Pv009WidgetState extends State<Pv009Widget> {
                     fontStyle:
                         FlutterFlowTheme.of(context).headlineLarge.fontStyle,
                   ),
+                  fontSize: 22.0,
                   letterSpacing: 0.0,
                   fontWeight:
                       FlutterFlowTheme.of(context).headlineLarge.fontWeight,
@@ -128,6 +129,7 @@ class _Pv009WidgetState extends State<Pv009Widget> {
                                           .fontStyle,
                                     ),
                                     color: FlutterFlowTheme.of(context).info,
+                                    fontSize: 26.0,
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.bold,
                                     fontStyle: FlutterFlowTheme.of(context)
@@ -261,6 +263,7 @@ class _Pv009WidgetState extends State<Pv009Widget> {
                                             ),
                                             color: FlutterFlowTheme.of(context)
                                                 .info,
+                                            fontSize: 10.0,
                                             letterSpacing: 0.0,
                                             fontWeight: FontWeight.w600,
                                             fontStyle:

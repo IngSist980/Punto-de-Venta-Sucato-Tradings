@@ -1,3 +1,4 @@
+import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
@@ -272,6 +273,12 @@ class _Adm005WidgetState extends State<Adm005Widget> {
                                   TextFormField(
                                     controller: _model.textController1,
                                     focusNode: _model.textFieldFocusNode1,
+                                    onFieldSubmitted: (_) async {
+                                      safeSetState(() {
+                                        _model.textController1?.text =
+                                            _model.textController1.text;
+                                      });
+                                    },
                                     textCapitalization:
                                         TextCapitalization.words,
                                     obscureText: false,
@@ -421,6 +428,12 @@ class _Adm005WidgetState extends State<Adm005Widget> {
                                         child: TextFormField(
                                           controller: _model.textController2,
                                           focusNode: _model.textFieldFocusNode2,
+                                          onFieldSubmitted: (_) async {
+                                            safeSetState(() {
+                                              _model.textController2?.text =
+                                                  _model.textController2.text;
+                                            });
+                                          },
                                           obscureText: false,
                                           decoration: InputDecoration(
                                             labelText: 'Correo Electrónico *',
@@ -575,6 +588,12 @@ class _Adm005WidgetState extends State<Adm005Widget> {
                                         child: TextFormField(
                                           controller: _model.textController3,
                                           focusNode: _model.textFieldFocusNode3,
+                                          onFieldSubmitted: (_) async {
+                                            safeSetState(() {
+                                              _model.textController3?.text =
+                                                  _model.textController3.text;
+                                            });
+                                          },
                                           obscureText: false,
                                           decoration: InputDecoration(
                                             labelText: 'Teléfono',
@@ -729,6 +748,12 @@ class _Adm005WidgetState extends State<Adm005Widget> {
                                   TextFormField(
                                     controller: _model.textController4,
                                     focusNode: _model.textFieldFocusNode4,
+                                    onFieldSubmitted: (_) async {
+                                      safeSetState(() {
+                                        _model.textController4?.text =
+                                            _model.textController4.text;
+                                      });
+                                    },
                                     obscureText: false,
                                     decoration: InputDecoration(
                                       labelText: 'Nombre de Usuario *',
@@ -857,6 +882,12 @@ class _Adm005WidgetState extends State<Adm005Widget> {
                                   TextFormField(
                                     controller: _model.textController5,
                                     focusNode: _model.textFieldFocusNode5,
+                                    onFieldSubmitted: (_) async {
+                                      safeSetState(() {
+                                        _model.textController5?.text =
+                                            _model.textController5.text;
+                                      });
+                                    },
                                     obscureText: !_model.passwordVisibility,
                                     decoration: InputDecoration(
                                       labelText: 'Contraseña *',
@@ -1449,8 +1480,20 @@ class _Adm005WidgetState extends State<Adm005Widget> {
                                     mainAxisAlignment: MainAxisAlignment.end,
                                     children: [
                                       FFButtonWidget(
-                                        onPressed: () {
-                                          print('Button pressed ...');
+                                        onPressed: () async {
+                                          safeSetState(() {
+                                            _model.textController1?.clear();
+                                            _model.textController2?.clear();
+                                            _model.textController3?.clear();
+                                            _model.textController4?.clear();
+                                            _model.textController5?.clear();
+                                          });
+                                          safeSetState(() {
+                                            _model.checkboxValue1 = false;
+                                            _model.checkboxValue2 = false;
+                                            _model.checkboxValue4 = false;
+                                            _model.checkboxValue3 = true;
+                                          });
                                         },
                                         text: 'Cancelar',
                                         options: FFButtonOptions(
@@ -1501,8 +1544,21 @@ class _Adm005WidgetState extends State<Adm005Widget> {
                                         ),
                                       ),
                                       FFButtonWidget(
-                                        onPressed: () {
-                                          print('Button pressed ...');
+                                        onPressed: () async {
+                                          await UsuariosRecord.collection
+                                              .doc()
+                                              .set(createUsuariosRecordData(
+                                                nombreCompleto:
+                                                    _model.textController1.text,
+                                                correoElectronico:
+                                                    _model.textController2.text,
+                                                telefono: int.tryParse(_model
+                                                    .textController3.text),
+                                                nombreUsuario:
+                                                    _model.textController4.text,
+                                                contrasena:
+                                                    _model.textController5.text,
+                                              ));
                                         },
                                         text: 'Registrar Usuario',
                                         options: FFButtonOptions(

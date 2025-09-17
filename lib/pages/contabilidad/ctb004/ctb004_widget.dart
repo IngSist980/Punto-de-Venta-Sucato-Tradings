@@ -4,6 +4,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'ctb004_model.dart';
@@ -68,8 +69,8 @@ class _Ctb004WidgetState extends State<Ctb004Widget> {
               color: FlutterFlowTheme.of(context).primaryText,
               size: 24.0,
             ),
-            onPressed: () {
-              print('IconButton pressed ...');
+            onPressed: () async {
+              context.pushNamed(Ctb001Widget.routeName);
             },
           ),
           title: Text(
@@ -494,10 +495,17 @@ class _Ctb004WidgetState extends State<Ctb004Widget> {
                                             ),
                                       ),
                                       FlutterFlowDropDown<String>(
-                                        controller: _model
-                                                .dropDownValueController1 ??=
-                                            FormFieldController<String>(null),
-                                        options: [
+                                        controller:
+                                            _model.dropDownValueController1 ??=
+                                                FormFieldController<String>(
+                                          _model.dropDownValue1 ??= '',
+                                        ),
+                                        options: List<String>.from([
+                                          'FAC-2024-001',
+                                          'FAC-2024-002',
+                                          'FAC-2024-003'
+                                        ]),
+                                        optionLabels: [
                                           'FAC-2024-001 - Cliente ABC',
                                           'FAC-2024-002 - Cliente XYZ',
                                           'FAC-2024-003 - Cliente DEF'
@@ -990,7 +998,7 @@ class _Ctb004WidgetState extends State<Ctb004Widget> {
                                             MainAxisAlignment.spaceBetween,
                                         children: [
                                           Text(
-                                            '\$75.00',
+                                            '₡75,000',
                                             style: FlutterFlowTheme.of(context)
                                                 .headlineMedium
                                                 .override(
@@ -1080,8 +1088,16 @@ class _Ctb004WidgetState extends State<Ctb004Widget> {
                                 FlutterFlowDropDown<String>(
                                   controller:
                                       _model.dropDownValueController2 ??=
-                                          FormFieldController<String>(null),
-                                  options: [
+                                          FormFieldController<String>(
+                                    _model.dropDownValue2 ??= '',
+                                  ),
+                                  options: List<String>.from([
+                                    'Transferencia Bancaria',
+                                    'Efectivo',
+                                    'Nota Abierta',
+                                    'Cheque'
+                                  ]),
+                                  optionLabels: [
                                     'Transferencia Bancaria',
                                     'Efectivo',
                                     'Nota Abierta',
@@ -1290,31 +1306,45 @@ class _Ctb004WidgetState extends State<Ctb004Widget> {
                       ),
                     ),
                   ),
-                  Padding(
-                    padding: EdgeInsets.all(16.0),
-                    child: Container(
-                      width: double.infinity,
-                      decoration: BoxDecoration(
-                        color: FlutterFlowTheme.of(context).accent4,
-                        borderRadius: BorderRadius.circular(8.0),
-                      ),
-                      child: Padding(
-                        padding: EdgeInsets.all(12.0),
-                        child: Row(
-                          mainAxisSize: MainAxisSize.max,
-                          children: [
-                            Icon(
-                              Icons.error_outline,
-                              color: FlutterFlowTheme.of(context).error,
-                              size: 20.0,
-                            ),
-                            Expanded(
-                              child: Text(
-                                'Por favor complete todos los campos antes de continuar.',
-                                style: FlutterFlowTheme.of(context)
-                                    .bodyMedium
-                                    .override(
-                                      font: GoogleFonts.inter(
+                  if (_model.textController1.text ==
+                      _model.textController1.text)
+                    Padding(
+                      padding: EdgeInsets.all(16.0),
+                      child: Container(
+                        width: double.infinity,
+                        decoration: BoxDecoration(
+                          color: FlutterFlowTheme.of(context).accent4,
+                          borderRadius: BorderRadius.circular(8.0),
+                        ),
+                        child: Padding(
+                          padding: EdgeInsets.all(12.0),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.max,
+                            children: [
+                              Icon(
+                                Icons.error_outline,
+                                color: FlutterFlowTheme.of(context).error,
+                                size: 20.0,
+                              ),
+                              Expanded(
+                                child: Text(
+                                  'Por favor complete todos los campos antes de continuar.',
+                                  style: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .override(
+                                        font: GoogleFonts.inter(
+                                          fontWeight:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyMedium
+                                                  .fontWeight,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyMedium
+                                                  .fontStyle,
+                                        ),
+                                        color:
+                                            FlutterFlowTheme.of(context).error,
+                                        letterSpacing: 0.0,
                                         fontWeight: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .fontWeight,
@@ -1322,25 +1352,30 @@ class _Ctb004WidgetState extends State<Ctb004Widget> {
                                             .bodyMedium
                                             .fontStyle,
                                       ),
-                                      color: FlutterFlowTheme.of(context).error,
-                                      letterSpacing: 0.0,
-                                      fontWeight: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .fontWeight,
-                                      fontStyle: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .fontStyle,
-                                    ),
+                                ),
                               ),
-                            ),
-                          ].divide(SizedBox(width: 8.0)),
+                            ].divide(SizedBox(width: 8.0)),
+                          ),
                         ),
                       ),
                     ),
-                  ),
                   FFButtonWidget(
-                    onPressed: () {
-                      print('Button pressed ...');
+                    onPressed: () async {
+                      await showDialog(
+                        context: context,
+                        builder: (alertDialogContext) {
+                          return AlertDialog(
+                            title: Text('Nota de credito registrada'),
+                            actions: [
+                              TextButton(
+                                onPressed: () =>
+                                    Navigator.pop(alertDialogContext),
+                                child: Text('Ok'),
+                              ),
+                            ],
+                          );
+                        },
+                      );
                     },
                     text: 'Registrar Nota de Crédito',
                     icon: Icon(
@@ -1376,6 +1411,20 @@ class _Ctb004WidgetState extends State<Ctb004Widget> {
                         color: Colors.transparent,
                       ),
                       borderRadius: BorderRadius.circular(12.0),
+                    ),
+                  ),
+                  InkWell(
+                    splashColor: Colors.transparent,
+                    focusColor: Colors.transparent,
+                    hoverColor: Colors.transparent,
+                    highlightColor: Colors.transparent,
+                    onTap: () async {
+                      context.pushNamed(Ctb005Widget.routeName);
+                    },
+                    child: Icon(
+                      Icons.arrow_right,
+                      color: FlutterFlowTheme.of(context).primaryText,
+                      size: 24.0,
                     ),
                   ),
                 ]

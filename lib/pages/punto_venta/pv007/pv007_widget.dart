@@ -2,6 +2,7 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'pv007_model.dart';
@@ -1562,6 +1563,20 @@ class _Pv007WidgetState extends State<Pv007Widget> {
                                 ].divide(SizedBox(height: 12.0)),
                               ),
                             ),
+                          ),
+                        ),
+                        InkWell(
+                          splashColor: Colors.transparent,
+                          focusColor: Colors.transparent,
+                          hoverColor: Colors.transparent,
+                          highlightColor: Colors.transparent,
+                          onTap: () async {
+                            context.pushNamed(Pv008Widget.routeName);
+                          },
+                          child: Icon(
+                            Icons.arrow_right,
+                            color: FlutterFlowTheme.of(context).primaryText,
+                            size: 24.0,
                           ),
                         ),
                       ].divide(SizedBox(height: 24.0)),

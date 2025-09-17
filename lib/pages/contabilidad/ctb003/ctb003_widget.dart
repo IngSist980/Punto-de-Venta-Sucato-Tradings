@@ -4,6 +4,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
+import '/index.dart';
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -66,15 +67,15 @@ class _Ctb003WidgetState extends State<Ctb003Widget> {
             padding: EdgeInsetsDirectional.fromSTEB(16.0, 8.0, 16.0, 8.0),
             child: FlutterFlowIconButton(
               borderRadius: 12.0,
-              buttonSize: 40.0,
+              buttonSize: 78.9,
               fillColor: Colors.transparent,
               icon: Icon(
                 Icons.arrow_back_rounded,
                 color: FlutterFlowTheme.of(context).info,
                 size: 24.0,
               ),
-              onPressed: () {
-                print('IconButton pressed ...');
+              onPressed: () async {
+                context.pushNamed(Ctb001Widget.routeName);
               },
             ),
           ),
@@ -362,7 +363,7 @@ class _Ctb003WidgetState extends State<Ctb003Widget> {
                                                 CrossAxisAlignment.center,
                                             children: [
                                               Text(
-                                                'Seleccionar fecha',
+                                                '19/08/2025',
                                                 style: FlutterFlowTheme.of(
                                                         context)
                                                     .bodyMedium
@@ -438,10 +439,18 @@ class _Ctb003WidgetState extends State<Ctb003Widget> {
                                             ),
                                       ),
                                       FlutterFlowDropDown<String>(
-                                        controller: _model
-                                                .dropDownValueController ??=
-                                            FormFieldController<String>(null),
-                                        options: [
+                                        controller:
+                                            _model.dropDownValueController ??=
+                                                FormFieldController<String>(
+                                          _model.dropDownValue ??= '',
+                                        ),
+                                        options: List<String>.from([
+                                          'Proveedor ABC S.A.',
+                                          'Distribuidora XYZ Ltda.',
+                                          'Servicios Generales DEF',
+                                          'Tecnología GHI Corp.'
+                                        ]),
+                                        optionLabels: [
                                           'Proveedor ABC S.A.',
                                           'Distribuidora XYZ Ltda.',
                                           'Servicios Generales DEF',
@@ -1446,7 +1455,7 @@ class _Ctb003WidgetState extends State<Ctb003Widget> {
                                                           ),
                                                     ),
                                                     Text(
-                                                      '20/01/2024',
+                                                      '19/08/2025',
                                                       style:
                                                           FlutterFlowTheme.of(
                                                                   context)
@@ -1589,8 +1598,27 @@ class _Ctb003WidgetState extends State<Ctb003Widget> {
                           ),
                           Expanded(
                             child: FFButtonWidget(
-                              onPressed: () {
-                                print('Button pressed ...');
+                              onPressed: () async {
+                                await showDialog(
+                                  context: context,
+                                  builder: (alertDialogContext) {
+                                    return AlertDialog(
+                                      title: Text('Pago Registrado'),
+                                      actions: [
+                                        TextButton(
+                                          onPressed: () =>
+                                              Navigator.pop(alertDialogContext),
+                                          child: Text('Ok'),
+                                        ),
+                                      ],
+                                    );
+                                  },
+                                );
+                                safeSetState(() {
+                                  _model.textController1?.clear();
+                                  _model.textController3?.clear();
+                                  _model.textController2?.clear();
+                                });
                               },
                               text: 'Guardar Pago',
                               options: FFButtonOptions(
@@ -1626,6 +1654,24 @@ class _Ctb003WidgetState extends State<Ctb003Widget> {
                             ),
                           ),
                         ].divide(SizedBox(width: 16.0)),
+                      ),
+                    ),
+                    Padding(
+                      padding:
+                          EdgeInsetsDirectional.fromSTEB(160.0, 0.0, 0.0, 0.0),
+                      child: InkWell(
+                        splashColor: Colors.transparent,
+                        focusColor: Colors.transparent,
+                        hoverColor: Colors.transparent,
+                        highlightColor: Colors.transparent,
+                        onTap: () async {
+                          context.pushNamed(Ctb004Widget.routeName);
+                        },
+                        child: Icon(
+                          Icons.arrow_right,
+                          color: FlutterFlowTheme.of(context).primaryText,
+                          size: 24.0,
+                        ),
                       ),
                     ),
                   ],

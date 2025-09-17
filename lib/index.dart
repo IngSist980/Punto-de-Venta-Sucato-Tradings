@@ -1,14 +1,11 @@
 // Export pages
-export '/pages/home_page/home_page_widget.dart' show HomePageWidget;
-export '/pages/admin/adm_001/adm001_widget.dart' show Adm001Widget;
-export '/pages/admin/adm_002/adm002_widget.dart' show Adm002Widget;
+export '/pages/admin/login/a_d_m_001_iniciar_sesion/a_d_m001_iniciar_sesion_widget.dart'
+    show ADM001IniciarSesionWidget;
 export '/pages/admin/adm_005/adm005_widget.dart' show Adm005Widget;
 export '/pages/admin/adm_006/adm006_widget.dart' show Adm006Widget;
 export '/pages/admin/adm_003/adm003_widget.dart' show Adm003Widget;
 export '/pages/punto_venta/pv002/pv002_widget.dart' show Pv002Widget;
 export '/pages/admin/adm_004/adm004_widget.dart' show Adm004Widget;
-export '/pages/admin/crearcuenta/crearcuenta_widget.dart'
-    show CrearcuentaWidget;
 export '/pages/inventario/inv008/inv008_widget.dart' show Inv008Widget;
 export '/pages/inventario/inv003/inv003_widget.dart' show Inv003Widget;
 export '/pages/inventario/inv002/inv002_widget.dart' show Inv002Widget;
@@ -36,3 +33,12 @@ export '/pages/reporteria/rep005/rep005_widget.dart' show Rep005Widget;
 export '/pages/reporteria/rep006/rep006_widget.dart' show Rep006Widget;
 export '/pages/punto_venta/pv011/pv011_widget.dart' show Pv011Widget;
 export '/pages/punto_venta/pv001/pv001_widget.dart' show Pv001Widget;
+export '/pages/admin/login/crearcuenta/crearcuenta_widget.dart'
+    show CrearcuentaWidget;
+export '/pages/admin/login/a_d_m_002_recovery_pass/a_d_m002_recovery_pass_widget.dart'
+    show ADM002RecoveryPassWidget;
+export '/dashboard/dashboard/dashboard_widget.dart' show DashboardWidget;
+export '/dashboard/clientes/c_r_d_clientes/c_r_d_clientes_widget.dart'
+    show CRDClientesWidget;
+export '/dashboard/empleados/c_r_d_empleados/c_r_d_empleados_widget.dart'
+    show CRDEmpleadosWidget;

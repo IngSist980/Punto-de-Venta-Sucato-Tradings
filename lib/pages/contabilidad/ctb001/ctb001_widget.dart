@@ -4,6 +4,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'ctb001_model.dart';
@@ -32,10 +33,10 @@ class _Ctb001WidgetState extends State<Ctb001Widget> {
     _model.textController1 ??= TextEditingController();
     _model.textFieldFocusNode1 ??= FocusNode();
 
-    _model.textController2 ??= TextEditingController(text: '2');
+    _model.textController2 ??= TextEditingController();
     _model.textFieldFocusNode2 ??= FocusNode();
 
-    _model.textController3 ??= TextEditingController(text: '5');
+    _model.textController3 ??= TextEditingController();
     _model.textFieldFocusNode3 ??= FocusNode();
 
     _model.textController4 ??= TextEditingController();
@@ -309,7 +310,7 @@ class _Ctb001WidgetState extends State<Ctb001Widget> {
                                             mainAxisSize: MainAxisSize.max,
                                             children: [
                                               Text(
-                                                '15/11/2024',
+                                                '19/08/2025',
                                                 style: FlutterFlowTheme.of(
                                                         context)
                                                     .bodyMedium
@@ -360,8 +361,16 @@ class _Ctb001WidgetState extends State<Ctb001Widget> {
                                 ),
                                 FlutterFlowDropDown<String>(
                                   controller: _model.dropDownValueController ??=
-                                      FormFieldController<String>(null),
-                                  options: [
+                                      FormFieldController<String>(
+                                    _model.dropDownValue ??= '',
+                                  ),
+                                  options: List<String>.from([
+                                    'Empresa ABC S.A.C.',
+                                    'Comercial XYZ E.I.R.L.',
+                                    'Distribuidora 123 S.R.L.',
+                                    'Servicios Generales S.A.'
+                                  ]),
+                                  optionLabels: [
                                     'Empresa ABC S.A.C.',
                                     'Comercial XYZ E.I.R.L.',
                                     'Distribuidora 123 S.R.L.',
@@ -640,6 +649,13 @@ class _Ctb001WidgetState extends State<Ctb001Widget> {
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .primaryBackground,
+                                                          image:
+                                                              DecorationImage(
+                                                            fit: BoxFit.cover,
+                                                            image: Image.asset(
+                                                              'assets/images/pina-deshidratada.png',
+                                                            ).image,
+                                                          ),
                                                           borderRadius:
                                                               BorderRadius
                                                                   .circular(
@@ -667,7 +683,6 @@ class _Ctb001WidgetState extends State<Ctb001Widget> {
                                                             obscureText: false,
                                                             decoration:
                                                                 InputDecoration(
-                                                              hintText: 'Cant.',
                                                               enabledBorder:
                                                                   InputBorder
                                                                       .none,
@@ -721,7 +736,7 @@ class _Ctb001WidgetState extends State<Ctb001Widget> {
                                                         ),
                                                       ),
                                                       Text(
-                                                        'S/ 2,500.00',
+                                                        '₡ 2,500.00',
                                                         style:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -885,6 +900,13 @@ class _Ctb001WidgetState extends State<Ctb001Widget> {
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .primaryBackground,
+                                                          image:
+                                                              DecorationImage(
+                                                            fit: BoxFit.cover,
+                                                            image: Image.asset(
+                                                              'assets/images/como_deshidratar_platano_51037_600_square.jpg',
+                                                            ).image,
+                                                          ),
                                                           borderRadius:
                                                               BorderRadius
                                                                   .circular(
@@ -912,7 +934,6 @@ class _Ctb001WidgetState extends State<Ctb001Widget> {
                                                             obscureText: false,
                                                             decoration:
                                                                 InputDecoration(
-                                                              hintText: 'Cant.',
                                                               enabledBorder:
                                                                   InputBorder
                                                                       .none,
@@ -966,7 +987,7 @@ class _Ctb001WidgetState extends State<Ctb001Widget> {
                                                         ),
                                                       ),
                                                       Text(
-                                                        'S/ 150.00',
+                                                        '₡ 2,150.00',
                                                         style:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -1055,7 +1076,7 @@ class _Ctb001WidgetState extends State<Ctb001Widget> {
                                       ),
                                 ),
                                 Text(
-                                  'S/ 5,150.00',
+                                  '₡ 4,650.00',
                                   style: FlutterFlowTheme.of(context)
                                       .titleLarge
                                       .override(
@@ -1082,35 +1103,49 @@ class _Ctb001WidgetState extends State<Ctb001Widget> {
                       ),
                     ),
                   ),
-                  Padding(
-                    padding: EdgeInsets.all(16.0),
-                    child: Container(
-                      width: double.infinity,
-                      decoration: BoxDecoration(
-                        color: FlutterFlowTheme.of(context).accent1,
-                        borderRadius: BorderRadius.circular(12.0),
-                        border: Border.all(
-                          color: FlutterFlowTheme.of(context).primary,
-                          width: 1.0,
+                  if (_model.textController1.text ==
+                      _model.textController1.text)
+                    Padding(
+                      padding: EdgeInsets.all(16.0),
+                      child: Container(
+                        width: double.infinity,
+                        decoration: BoxDecoration(
+                          color: FlutterFlowTheme.of(context).accent1,
+                          borderRadius: BorderRadius.circular(12.0),
+                          border: Border.all(
+                            color: FlutterFlowTheme.of(context).primary,
+                            width: 1.0,
+                          ),
                         ),
-                      ),
-                      child: Padding(
-                        padding: EdgeInsets.all(12.0),
-                        child: Row(
-                          mainAxisSize: MainAxisSize.max,
-                          children: [
-                            Icon(
-                              Icons.error_outline,
-                              color: FlutterFlowTheme.of(context).error,
-                              size: 20.0,
-                            ),
-                            Expanded(
-                              child: Text(
-                                'Por favor, complete todos los campos obligatorios.',
-                                style: FlutterFlowTheme.of(context)
-                                    .bodyMedium
-                                    .override(
-                                      font: GoogleFonts.inter(
+                        child: Padding(
+                          padding: EdgeInsets.all(12.0),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.max,
+                            children: [
+                              Icon(
+                                Icons.error_outline,
+                                color: FlutterFlowTheme.of(context).error,
+                                size: 20.0,
+                              ),
+                              Expanded(
+                                child: Text(
+                                  'Por favor, complete todos los campos obligatorios.',
+                                  style: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .override(
+                                        font: GoogleFonts.inter(
+                                          fontWeight:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyMedium
+                                                  .fontWeight,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyMedium
+                                                  .fontStyle,
+                                        ),
+                                        color:
+                                            FlutterFlowTheme.of(context).error,
+                                        letterSpacing: 0.0,
                                         fontWeight: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .fontWeight,
@@ -1118,25 +1153,30 @@ class _Ctb001WidgetState extends State<Ctb001Widget> {
                                             .bodyMedium
                                             .fontStyle,
                                       ),
-                                      color: FlutterFlowTheme.of(context).error,
-                                      letterSpacing: 0.0,
-                                      fontWeight: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .fontWeight,
-                                      fontStyle: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .fontStyle,
-                                    ),
+                                ),
                               ),
-                            ),
-                          ].divide(SizedBox(width: 12.0)),
+                            ].divide(SizedBox(width: 12.0)),
+                          ),
                         ),
                       ),
                     ),
-                  ),
                   FFButtonWidget(
-                    onPressed: () {
-                      print('Button pressed ...');
+                    onPressed: () async {
+                      await showDialog(
+                        context: context,
+                        builder: (alertDialogContext) {
+                          return AlertDialog(
+                            title: Text('Factura registrada'),
+                            actions: [
+                              TextButton(
+                                onPressed: () =>
+                                    Navigator.pop(alertDialogContext),
+                                child: Text('Ok'),
+                              ),
+                            ],
+                          );
+                        },
+                      );
                     },
                     text: 'Guardar Factura',
                     icon: Icon(
@@ -1794,7 +1834,7 @@ class _Ctb001WidgetState extends State<Ctb001Widget> {
                                                       ),
                                                 ),
                                                 Text(
-                                                  '12/11/2024',
+                                                  '19/08/2025',
                                                   style: FlutterFlowTheme.of(
                                                           context)
                                                       .bodySmall
@@ -1963,6 +2003,20 @@ class _Ctb001WidgetState extends State<Ctb001Widget> {
                           ].divide(SizedBox(height: 16.0)),
                         ),
                       ),
+                    ),
+                  ),
+                  InkWell(
+                    splashColor: Colors.transparent,
+                    focusColor: Colors.transparent,
+                    hoverColor: Colors.transparent,
+                    highlightColor: Colors.transparent,
+                    onTap: () async {
+                      context.pushNamed(Ctb002Widget.routeName);
+                    },
+                    child: Icon(
+                      Icons.arrow_right,
+                      color: FlutterFlowTheme.of(context).primaryText,
+                      size: 24.0,
                     ),
                   ),
                 ]

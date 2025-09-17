@@ -75,29 +75,21 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       debugLogDiagnostics: true,
       refreshListenable: appStateNotifier,
       navigatorKey: appNavigatorKey,
-      errorBuilder: (context, state) =>
-          appStateNotifier.loggedIn ? Adm003Widget() : Adm001Widget(),
+      errorBuilder: (context, state) => appStateNotifier.loggedIn
+          ? DashboardWidget()
+          : ADM001IniciarSesionWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
-          builder: (context, _) =>
-              appStateNotifier.loggedIn ? Adm003Widget() : Adm001Widget(),
+          builder: (context, _) => appStateNotifier.loggedIn
+              ? DashboardWidget()
+              : ADM001IniciarSesionWidget(),
         ),
         FFRoute(
-          name: HomePageWidget.routeName,
-          path: HomePageWidget.routePath,
-          builder: (context, params) => HomePageWidget(),
-        ),
-        FFRoute(
-          name: Adm001Widget.routeName,
-          path: Adm001Widget.routePath,
-          builder: (context, params) => Adm001Widget(),
-        ),
-        FFRoute(
-          name: Adm002Widget.routeName,
-          path: Adm002Widget.routePath,
-          builder: (context, params) => Adm002Widget(),
+          name: ADM001IniciarSesionWidget.routeName,
+          path: ADM001IniciarSesionWidget.routePath,
+          builder: (context, params) => ADM001IniciarSesionWidget(),
         ),
         FFRoute(
           name: Adm005Widget.routeName,
@@ -123,11 +115,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: Adm004Widget.routeName,
           path: Adm004Widget.routePath,
           builder: (context, params) => Adm004Widget(),
-        ),
-        FFRoute(
-          name: CrearcuentaWidget.routeName,
-          path: CrearcuentaWidget.routePath,
-          builder: (context, params) => CrearcuentaWidget(),
         ),
         FFRoute(
           name: Inv008Widget.routeName,
@@ -263,6 +250,31 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: Pv001Widget.routeName,
           path: Pv001Widget.routePath,
           builder: (context, params) => Pv001Widget(),
+        ),
+        FFRoute(
+          name: CrearcuentaWidget.routeName,
+          path: CrearcuentaWidget.routePath,
+          builder: (context, params) => CrearcuentaWidget(),
+        ),
+        FFRoute(
+          name: ADM002RecoveryPassWidget.routeName,
+          path: ADM002RecoveryPassWidget.routePath,
+          builder: (context, params) => ADM002RecoveryPassWidget(),
+        ),
+        FFRoute(
+          name: DashboardWidget.routeName,
+          path: DashboardWidget.routePath,
+          builder: (context, params) => DashboardWidget(),
+        ),
+        FFRoute(
+          name: CRDClientesWidget.routeName,
+          path: CRDClientesWidget.routePath,
+          builder: (context, params) => CRDClientesWidget(),
+        ),
+        FFRoute(
+          name: CRDEmpleadosWidget.routeName,
+          path: CRDEmpleadosWidget.routePath,
+          builder: (context, params) => CRDEmpleadosWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
@@ -433,7 +445,7 @@ class FFRoute {
 
           if (requireAuth && !appStateNotifier.loggedIn) {
             appStateNotifier.setRedirectLocationIfUnset(state.uri.toString());
-            return '/adm001';
+            return '/aDM001IniciarSesion';
           }
           return null;
         },

@@ -456,7 +456,7 @@ class _Rep006WidgetState extends State<Rep006Widget> {
                                                         ),
                                                   ),
                                                   Text(
-                                                    '10:30 AM',
+                                                    '8:50 PM',
                                                     style: FlutterFlowTheme.of(
                                                             context)
                                                         .bodySmall
@@ -497,7 +497,7 @@ class _Rep006WidgetState extends State<Rep006Widget> {
                                                     .fromSTEB(
                                                         0.0, 4.0, 0.0, 0.0),
                                                 child: Text(
-                                                  'Usuario: Juan Pérez',
+                                                  'Usuario: admin@sucato.cr',
                                                   style: FlutterFlowTheme.of(
                                                           context)
                                                       .bodySmall
@@ -577,7 +577,7 @@ class _Rep006WidgetState extends State<Rep006Widget> {
                                                     .fromSTEB(
                                                         0.0, 2.0, 0.0, 0.0),
                                                 child: Text(
-                                                  '15 Dic 2024',
+                                                  '19 Ago 2025',
                                                   style: FlutterFlowTheme.of(
                                                           context)
                                                       .bodySmall
@@ -663,7 +663,7 @@ class _Rep006WidgetState extends State<Rep006Widget> {
                                                         .spaceBetween,
                                                 children: [
                                                   Text(
-                                                    'Modificación de producto',
+                                                    'Creación de producto',
                                                     style: FlutterFlowTheme.of(
                                                             context)
                                                         .bodyMedium
@@ -690,7 +690,7 @@ class _Rep006WidgetState extends State<Rep006Widget> {
                                                         ),
                                                   ),
                                                   Text(
-                                                    '09:45 AM',
+                                                    '8:53 PM',
                                                     style: FlutterFlowTheme.of(
                                                             context)
                                                         .bodySmall
@@ -731,7 +731,7 @@ class _Rep006WidgetState extends State<Rep006Widget> {
                                                     .fromSTEB(
                                                         0.0, 4.0, 0.0, 0.0),
                                                 child: Text(
-                                                  'Usuario: María García',
+                                                  'Usuario: admin@sucato.cr',
                                                   style: FlutterFlowTheme.of(
                                                           context)
                                                       .bodySmall
@@ -771,7 +771,7 @@ class _Rep006WidgetState extends State<Rep006Widget> {
                                                     .fromSTEB(
                                                         0.0, 2.0, 0.0, 0.0),
                                                 child: Text(
-                                                  'Producto: Piña deshidratada 500g',
+                                                  'Producto: Banano deshidratado',
                                                   style: FlutterFlowTheme.of(
                                                           context)
                                                       .bodySmall
@@ -811,7 +811,7 @@ class _Rep006WidgetState extends State<Rep006Widget> {
                                                     .fromSTEB(
                                                         0.0, 2.0, 0.0, 0.0),
                                                 child: Text(
-                                                  '15 Dic 2024',
+                                                  '19 Ago 2025',
                                                   style: FlutterFlowTheme.of(
                                                           context)
                                                       .bodySmall
@@ -897,7 +897,7 @@ class _Rep006WidgetState extends State<Rep006Widget> {
                                                         .spaceBetween,
                                                 children: [
                                                   Text(
-                                                    'Creación de pedido',
+                                                    'Registro de usuario',
                                                     style: FlutterFlowTheme.of(
                                                             context)
                                                         .bodyMedium
@@ -924,7 +924,7 @@ class _Rep006WidgetState extends State<Rep006Widget> {
                                                         ),
                                                   ),
                                                   Text(
-                                                    '08:20 AM',
+                                                    '8:51 PM',
                                                     style: FlutterFlowTheme.of(
                                                             context)
                                                         .bodySmall
@@ -965,7 +965,7 @@ class _Rep006WidgetState extends State<Rep006Widget> {
                                                     .fromSTEB(
                                                         0.0, 4.0, 0.0, 0.0),
                                                 child: Text(
-                                                  'Usuario: Carlos López',
+                                                  'Usuario: Carlos Rodríguez',
                                                   style: FlutterFlowTheme.of(
                                                           context)
                                                       .bodySmall
@@ -1045,7 +1045,7 @@ class _Rep006WidgetState extends State<Rep006Widget> {
                                                     .fromSTEB(
                                                         0.0, 2.0, 0.0, 0.0),
                                                 child: Text(
-                                                  '15 Dic 2024',
+                                                  '19 Ago 2025',
                                                   style: FlutterFlowTheme.of(
                                                           context)
                                                       .bodySmall
@@ -1131,7 +1131,7 @@ class _Rep006WidgetState extends State<Rep006Widget> {
                                                         .spaceBetween,
                                                 children: [
                                                   Text(
-                                                    'Intento de acceso fallido',
+                                                    'Nueva orden',
                                                     style: FlutterFlowTheme.of(
                                                             context)
                                                         .bodyMedium
@@ -1158,7 +1158,7 @@ class _Rep006WidgetState extends State<Rep006Widget> {
                                                         ),
                                                   ),
                                                   Text(
-                                                    '07:15 AM',
+                                                    '8:56 PM',
                                                     style: FlutterFlowTheme.of(
                                                             context)
                                                         .bodySmall
@@ -1199,7 +1199,7 @@ class _Rep006WidgetState extends State<Rep006Widget> {
                                                     .fromSTEB(
                                                         0.0, 4.0, 0.0, 0.0),
                                                 child: Text(
-                                                  'Usuario: admin@frutasdesh.com',
+                                                  'Usuario: admin@sucato.cr',
                                                   style: FlutterFlowTheme.of(
                                                           context)
                                                       .bodySmall
@@ -1279,7 +1279,7 @@ class _Rep006WidgetState extends State<Rep006Widget> {
                                                     .fromSTEB(
                                                         0.0, 2.0, 0.0, 0.0),
                                                 child: Text(
-                                                  '15 Dic 2024',
+                                                  '19 Ago 2025',
                                                   style: FlutterFlowTheme.of(
                                                           context)
                                                       .bodySmall
@@ -1586,7 +1586,7 @@ class _Rep006WidgetState extends State<Rep006Widget> {
                               size: 20.0,
                             ),
                             Text(
-                              'Última actualización: hace 2 minutos',
+                              'Última actualización: hace 5 minutos',
                               style: FlutterFlowTheme.of(context)
                                   .bodySmall
                                   .override(

@@ -4,6 +4,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'pv008_model.dart';
@@ -312,7 +313,7 @@ class _Pv008WidgetState extends State<Pv008Widget> {
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       8.0, 4.0, 8.0, 4.0),
                                   child: Container(
-                                    height: 24.0,
+                                    height: 32.9,
                                     decoration: BoxDecoration(
                                       color:
                                           FlutterFlowTheme.of(context).success,
@@ -654,8 +655,16 @@ class _Pv008WidgetState extends State<Pv008Widget> {
                             ),
                             FlutterFlowDropDown<String>(
                               controller: _model.dropDownValueController ??=
-                                  FormFieldController<String>(null),
-                              options: [
+                                  FormFieldController<String>(
+                                _model.dropDownValue ??= '',
+                              ),
+                              options: List<String>.from([
+                                'Producto defectuoso',
+                                'No cumple expectativas',
+                                'Compra por error',
+                                'Cambio de opinión'
+                              ]),
+                              optionLabels: [
                                 'Producto defectuoso',
                                 'No cumple expectativas',
                                 'Compra por error',
@@ -1079,6 +1088,20 @@ class _Pv008WidgetState extends State<Pv008Widget> {
                         ),
                       ),
                     ].divide(SizedBox(width: 12.0)),
+                  ),
+                  InkWell(
+                    splashColor: Colors.transparent,
+                    focusColor: Colors.transparent,
+                    hoverColor: Colors.transparent,
+                    highlightColor: Colors.transparent,
+                    onTap: () async {
+                      context.pushNamed(Pv009Widget.routeName);
+                    },
+                    child: Icon(
+                      Icons.arrow_right,
+                      color: FlutterFlowTheme.of(context).primaryText,
+                      size: 24.0,
+                    ),
                   ),
                 ]
                     .divide(SizedBox(height: 16.0))

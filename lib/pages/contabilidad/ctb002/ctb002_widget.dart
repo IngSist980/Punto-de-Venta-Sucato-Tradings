@@ -5,6 +5,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'ctb002_model.dart';
@@ -63,8 +64,8 @@ class _Ctb002WidgetState extends State<Ctb002Widget> {
               color: FlutterFlowTheme.of(context).primaryText,
               size: 30.0,
             ),
-            onPressed: () {
-              print('IconButton pressed ...');
+            onPressed: () async {
+              context.pushNamed(Ctb001Widget.routeName);
             },
           ),
           title: Text(
@@ -260,11 +261,13 @@ class _Ctb002WidgetState extends State<Ctb002Widget> {
                                 ),
                                 FlutterFlowDropDown<String>(
                                   controller: _model.dropDownValueController ??=
-                                      FormFieldController<String>(
-                                    _model.dropDownValue ??=
-                                        'Ingresos y Egresos',
-                                  ),
-                                  options: [
+                                      FormFieldController<String>(null),
+                                  options: List<String>.from([
+                                    'Ingresos y Egresos',
+                                    'Solo Ingresos',
+                                    'Solo Egresos'
+                                  ]),
+                                  optionLabels: [
                                     'Ingresos y Egresos',
                                     'Solo Ingresos',
                                     'Solo Egresos'
@@ -655,8 +658,23 @@ class _Ctb002WidgetState extends State<Ctb002Widget> {
                               children: [
                                 Expanded(
                                   child: FFButtonWidget(
-                                    onPressed: () {
-                                      print('Button pressed ...');
+                                    onPressed: () async {
+                                      await showDialog(
+                                        context: context,
+                                        builder: (alertDialogContext) {
+                                          return AlertDialog(
+                                            title: Text(
+                                                'Reporte descargado en PDF'),
+                                            actions: [
+                                              TextButton(
+                                                onPressed: () => Navigator.pop(
+                                                    alertDialogContext),
+                                                child: Text('Ok'),
+                                              ),
+                                            ],
+                                          );
+                                        },
+                                      );
                                     },
                                     text: 'Generar Reporte',
                                     icon: Icon(
@@ -683,6 +701,7 @@ class _Ctb002WidgetState extends State<Ctb002Widget> {
                                                       .fontStyle,
                                             ),
                                             color: Colors.white,
+                                            fontSize: 16.0,
                                             letterSpacing: 0.0,
                                             fontWeight: FontWeight.w600,
                                             fontStyle:
@@ -842,7 +861,7 @@ class _Ctb002WidgetState extends State<Ctb002Widget> {
                                             ),
                                       ),
                                       Text(
-                                        '\$2,450,000',
+                                        '₡2,450,000',
                                         style: FlutterFlowTheme.of(context)
                                             .headlineSmall
                                             .override(
@@ -916,7 +935,7 @@ class _Ctb002WidgetState extends State<Ctb002Widget> {
                                             ),
                                       ),
                                       Text(
-                                        '\$1,890,000',
+                                        '₡1,890,000',
                                         style: FlutterFlowTheme.of(context)
                                             .headlineSmall
                                             .override(
@@ -990,7 +1009,7 @@ class _Ctb002WidgetState extends State<Ctb002Widget> {
                                       ),
                                 ),
                                 Text(
-                                  '\$560,000',
+                                  '₡560,000',
                                   style: FlutterFlowTheme.of(context)
                                       .titleLarge
                                       .override(
@@ -1407,6 +1426,24 @@ class _Ctb002WidgetState extends State<Ctb002Widget> {
                             ),
                           ].divide(SizedBox(height: 16.0)),
                         ),
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding:
+                        EdgeInsetsDirectional.fromSTEB(160.0, 0.0, 0.0, 0.0),
+                    child: InkWell(
+                      splashColor: Colors.transparent,
+                      focusColor: Colors.transparent,
+                      hoverColor: Colors.transparent,
+                      highlightColor: Colors.transparent,
+                      onTap: () async {
+                        context.pushNamed(Ctb003Widget.routeName);
+                      },
+                      child: Icon(
+                        Icons.arrow_right,
+                        color: FlutterFlowTheme.of(context).primaryText,
+                        size: 24.0,
                       ),
                     ),
                   ),

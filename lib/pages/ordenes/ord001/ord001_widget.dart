@@ -3,6 +3,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'ord001_model.dart';
@@ -139,8 +140,15 @@ class _Ord001WidgetState extends State<Ord001Widget> {
                                 FlutterFlowDropDown<String>(
                                   controller:
                                       _model.dropDownValueController1 ??=
-                                          FormFieldController<String>(null),
-                                  options: [
+                                          FormFieldController<String>(
+                                    _model.dropDownValue1 ??= '',
+                                  ),
+                                  options: List<String>.from([
+                                    'Distribuidora Central',
+                                    'Suministros Técnicos',
+                                    'Importadora Valle'
+                                  ]),
+                                  optionLabels: [
                                     'Distribuidora Central',
                                     'Suministros Técnicos',
                                     'Importadora Valle'
@@ -484,8 +492,16 @@ class _Ord001WidgetState extends State<Ord001Widget> {
                                 FlutterFlowDropDown<String>(
                                   controller:
                                       _model.dropDownValueController2 ??=
-                                          FormFieldController<String>(null),
-                                  options: ['Pendiente', 'Enviada', 'Recibida'],
+                                          FormFieldController<String>(
+                                    _model.dropDownValue2 ??= '',
+                                  ),
+                                  options: List<String>.from(
+                                      ['Pendiente', 'Enviada', 'Recibida']),
+                                  optionLabels: [
+                                    'Pendiente',
+                                    'Enviada',
+                                    'Recibida'
+                                  ],
                                   onChanged: (val) => safeSetState(
                                       () => _model.dropDownValue2 = val),
                                   width: double.infinity,
@@ -533,8 +549,28 @@ class _Ord001WidgetState extends State<Ord001Widget> {
                                   isMultiSelect: false,
                                 ),
                                 FFButtonWidget(
-                                  onPressed: () {
-                                    print('Button pressed ...');
+                                  onPressed: () async {
+                                    await showDialog(
+                                      context: context,
+                                      builder: (alertDialogContext) {
+                                        return AlertDialog(
+                                          title: Text('Orden creada'),
+                                          actions: [
+                                            TextButton(
+                                              onPressed: () => Navigator.pop(
+                                                  alertDialogContext),
+                                              child: Text('Ok'),
+                                            ),
+                                          ],
+                                        );
+                                      },
+                                    );
+                                    safeSetState(() {
+                                      _model.textController1?.clear();
+                                      _model.textController2?.clear();
+                                      _model.textController3?.clear();
+                                      _model.textController4?.clear();
+                                    });
                                   },
                                   text: 'Crear Orden',
                                   icon: Icon(
@@ -573,6 +609,25 @@ class _Ord001WidgetState extends State<Ord001Widget> {
                                   ),
                                 ),
                               ].divide(SizedBox(height: 12.0)),
+                            ),
+                            Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  150.0, 0.0, 0.0, 0.0),
+                              child: InkWell(
+                                splashColor: Colors.transparent,
+                                focusColor: Colors.transparent,
+                                hoverColor: Colors.transparent,
+                                highlightColor: Colors.transparent,
+                                onTap: () async {
+                                  context.pushNamed(Ord002Widget.routeName);
+                                },
+                                child: Icon(
+                                  Icons.arrow_right,
+                                  color:
+                                      FlutterFlowTheme.of(context).primaryText,
+                                  size: 24.0,
+                                ),
+                              ),
                             ),
                           ].divide(SizedBox(height: 16.0)),
                         ),

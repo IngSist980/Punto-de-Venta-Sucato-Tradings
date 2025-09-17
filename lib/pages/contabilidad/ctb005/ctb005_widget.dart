@@ -4,6 +4,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'ctb005_model.dart';
@@ -121,8 +122,8 @@ class _Ctb005WidgetState extends State<Ctb005Widget> {
               color: FlutterFlowTheme.of(context).primaryText,
               size: 24.0,
             ),
-            onPressed: () {
-              print('IconButton pressed ...');
+            onPressed: () async {
+              context.pushNamed(Ctb001Widget.routeName);
             },
           ),
           title: Text(
@@ -653,10 +654,10 @@ class _Ctb005WidgetState extends State<Ctb005Widget> {
                               ),
                               FlutterFlowDropDown<String>(
                                 controller: _model.dropDownValueController ??=
-                                    FormFieldController<String>(
-                                  _model.dropDownValue ??= 'Egreso',
-                                ),
-                                options: ['Ingreso', 'Egreso'],
+                                    FormFieldController<String>(null),
+                                options:
+                                    List<String>.from(['Ingreso', 'Egreso']),
+                                optionLabels: ['Ingreso', 'Egreso'],
                                 onChanged: (val) => safeSetState(
                                     () => _model.dropDownValue = val),
                                 width: double.infinity,
@@ -764,8 +765,29 @@ class _Ctb005WidgetState extends State<Ctb005Widget> {
                     mainAxisSize: MainAxisSize.max,
                     children: [
                       FFButtonWidget(
-                        onPressed: () {
-                          print('Button pressed ...');
+                        onPressed: () async {
+                          await showDialog(
+                            context: context,
+                            builder: (alertDialogContext) {
+                              return AlertDialog(
+                                title: Text('Cambios guardados'),
+                                actions: [
+                                  TextButton(
+                                    onPressed: () =>
+                                        Navigator.pop(alertDialogContext),
+                                    child: Text('Ok'),
+                                  ),
+                                ],
+                              );
+                            },
+                          );
+                          safeSetState(() {
+                            _model.textController1?.clear();
+                            _model.textController2?.clear();
+                          });
+                          safeSetState(() {
+                            _model.dropDownValueController?.reset();
+                          });
                         },
                         text: 'Guardar Cambios',
                         icon: Icon(
@@ -850,51 +872,72 @@ class _Ctb005WidgetState extends State<Ctb005Widget> {
                       ),
                     ].divide(SizedBox(height: 12.0)),
                   ),
-                  Padding(
-                    padding: EdgeInsets.all(12.0),
-                    child: Container(
-                      width: double.infinity,
-                      decoration: BoxDecoration(
-                        color: Color(0xFFE8F5E8),
-                        borderRadius: BorderRadius.circular(8.0),
-                        border: Border.all(
-                          color: Color(0xFFC3E6C3),
-                          width: 1.0,
+                  if (_model.textController1.text ==
+                      _model.textController1.text)
+                    Padding(
+                      padding: EdgeInsets.all(12.0),
+                      child: Container(
+                        width: double.infinity,
+                        decoration: BoxDecoration(
+                          color: Color(0xFFE8F5E8),
+                          borderRadius: BorderRadius.circular(8.0),
+                          border: Border.all(
+                            color: Color(0xFFC3E6C3),
+                            width: 1.0,
+                          ),
                         ),
-                      ),
-                      child: Padding(
-                        padding: EdgeInsets.all(12.0),
-                        child: Row(
-                          mainAxisSize: MainAxisSize.max,
-                          children: [
-                            Icon(
-                              Icons.check_circle_outline_rounded,
-                              color: Color(0xFF28A745),
-                              size: 20.0,
-                            ),
-                            Expanded(
-                              child: Text(
-                                'Los cambios se han guardado correctamente',
-                                style: FlutterFlowTheme.of(context)
-                                    .bodySmall
-                                    .override(
-                                      font: GoogleFonts.inter(
+                        child: Padding(
+                          padding: EdgeInsets.all(12.0),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.max,
+                            children: [
+                              Icon(
+                                Icons.check_circle_outline_rounded,
+                                color: Color(0xFF28A745),
+                                size: 20.0,
+                              ),
+                              Expanded(
+                                child: Text(
+                                  'Los cambios se han guardado correctamente',
+                                  style: FlutterFlowTheme.of(context)
+                                      .bodySmall
+                                      .override(
+                                        font: GoogleFonts.inter(
+                                          fontWeight: FontWeight.w500,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodySmall
+                                                  .fontStyle,
+                                        ),
+                                        color: Color(0xFF28A745),
+                                        letterSpacing: 0.0,
                                         fontWeight: FontWeight.w500,
                                         fontStyle: FlutterFlowTheme.of(context)
                                             .bodySmall
                                             .fontStyle,
                                       ),
-                                      color: Color(0xFF28A745),
-                                      letterSpacing: 0.0,
-                                      fontWeight: FontWeight.w500,
-                                      fontStyle: FlutterFlowTheme.of(context)
-                                          .bodySmall
-                                          .fontStyle,
-                                    ),
+                                ),
                               ),
-                            ),
-                          ].divide(SizedBox(width: 8.0)),
+                            ].divide(SizedBox(width: 8.0)),
+                          ),
                         ),
+                      ),
+                    ),
+                  Padding(
+                    padding:
+                        EdgeInsetsDirectional.fromSTEB(160.0, 0.0, 0.0, 0.0),
+                    child: InkWell(
+                      splashColor: Colors.transparent,
+                      focusColor: Colors.transparent,
+                      hoverColor: Colors.transparent,
+                      highlightColor: Colors.transparent,
+                      onTap: () async {
+                        context.pushNamed(Ctb006Widget.routeName);
+                      },
+                      child: Icon(
+                        Icons.arrow_right,
+                        color: FlutterFlowTheme.of(context).primaryText,
+                        size: 24.0,
                       ),
                     ),
                   ),

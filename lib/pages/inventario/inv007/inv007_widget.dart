@@ -4,6 +4,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'inv007_model.dart';
@@ -577,8 +578,15 @@ class _Inv007WidgetState extends State<Inv007Widget> {
                                             controller: _model
                                                     .dropDownValueController ??=
                                                 FormFieldController<String>(
-                                                    null),
-                                            options: [
+                                              _model.dropDownValue ??= '',
+                                            ),
+                                            options: List<String>.from([
+                                              'Productos Generales',
+                                              'Equipos Especializados',
+                                              'Productos Importados',
+                                              'Materias Primas'
+                                            ]),
+                                            optionLabels: [
                                               'Productos Generales',
                                               'Equipos Especializados',
                                               'Productos Importados',
@@ -834,8 +842,31 @@ class _Inv007WidgetState extends State<Inv007Widget> {
                             padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 16.0, 0.0, 0.0),
                             child: FFButtonWidget(
-                              onPressed: () {
-                                print('Button pressed ...');
+                              onPressed: () async {
+                                await showDialog(
+                                  context: context,
+                                  builder: (alertDialogContext) {
+                                    return AlertDialog(
+                                      title: Text('Proveedor registrado'),
+                                      actions: [
+                                        TextButton(
+                                          onPressed: () =>
+                                              Navigator.pop(alertDialogContext),
+                                          child: Text('Ok'),
+                                        ),
+                                      ],
+                                    );
+                                  },
+                                );
+                                safeSetState(() {
+                                  _model.textController1?.clear();
+                                  _model.textController2?.clear();
+                                  _model.textController3?.clear();
+                                  _model.textController4?.clear();
+                                  _model.textController5?.clear();
+                                  _model.textController6?.clear();
+                                  _model.textController7?.clear();
+                                });
                               },
                               text: 'Registrar Proveedor',
                               icon: Icon(
@@ -1055,6 +1086,20 @@ class _Inv007WidgetState extends State<Inv007Widget> {
                           ),
                         ].divide(SizedBox(height: 16.0)),
                       ),
+                    ),
+                  ),
+                  InkWell(
+                    splashColor: Colors.transparent,
+                    focusColor: Colors.transparent,
+                    hoverColor: Colors.transparent,
+                    highlightColor: Colors.transparent,
+                    onTap: () async {
+                      context.pushNamed(Inv008Widget.routeName);
+                    },
+                    child: Icon(
+                      Icons.arrow_right,
+                      color: FlutterFlowTheme.of(context).primaryText,
+                      size: 24.0,
                     ),
                   ),
                 ],

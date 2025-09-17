@@ -4,6 +4,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'rep005_model.dart';
@@ -523,7 +524,7 @@ class _Rep005WidgetState extends State<Rep005Widget> {
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
                                     Text(
-                                      'Total: \$45,280.00',
+                                      'Total: ₡465,280',
                                       style: FlutterFlowTheme.of(context)
                                           .bodySmall
                                           .override(
@@ -745,7 +746,7 @@ class _Rep005WidgetState extends State<Rep005Widget> {
                                                 ],
                                               ),
                                               Text(
-                                                '\$12,450.00',
+                                                '₡129,450.00',
                                                 style: FlutterFlowTheme.of(
                                                         context)
                                                     .bodyMedium
@@ -955,7 +956,7 @@ class _Rep005WidgetState extends State<Rep005Widget> {
                                                 ],
                                               ),
                                               Text(
-                                                '\$8,750.00',
+                                                '₡89,750.00',
                                                 style: FlutterFlowTheme.of(
                                                         context)
                                                     .bodyMedium
@@ -1201,7 +1202,7 @@ class _Rep005WidgetState extends State<Rep005Widget> {
                                                 ],
                                               ),
                                               Text(
-                                                '\$15,680.00',
+                                                '₡156,680.00',
                                                 style: FlutterFlowTheme.of(
                                                         context)
                                                     .bodyMedium
@@ -1375,7 +1376,7 @@ class _Rep005WidgetState extends State<Rep005Widget> {
                                                 ],
                                               ),
                                               Text(
-                                                '\$8,400.00',
+                                                '₡89,400.00',
                                                 style: FlutterFlowTheme.of(
                                                         context)
                                                     .bodyMedium
@@ -1417,6 +1418,20 @@ class _Rep005WidgetState extends State<Rep005Widget> {
                         ),
                       ),
                     ),
+                  ),
+                ),
+                InkWell(
+                  splashColor: Colors.transparent,
+                  focusColor: Colors.transparent,
+                  hoverColor: Colors.transparent,
+                  highlightColor: Colors.transparent,
+                  onTap: () async {
+                    context.pushNamed(Rep006Widget.routeName);
+                  },
+                  child: Icon(
+                    Icons.arrow_right,
+                    color: FlutterFlowTheme.of(context).primaryText,
+                    size: 24.0,
                   ),
                 ),
               ],

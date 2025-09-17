@@ -1,3 +1,32 @@
 {
-  "indexes": []
+  "indexes": [
+    {
+      "collectionGroup": "ClientesFrecuentes",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "UsuarioRef",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "NombreCompleto",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "user",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "rol",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "created_time",
+          "order": "DESCENDING"
+        }
+      ]
+    }
+  ]
 }

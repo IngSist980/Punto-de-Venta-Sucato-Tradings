@@ -1,7 +1,7 @@
-import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -74,10 +74,19 @@ class _Adm005WidgetState extends State<Adm005Widget> {
                 borderRadius: BorderRadius.circular(12.0),
                 shape: BoxShape.rectangle,
               ),
-              child: Icon(
-                Icons.keyboard_backspace,
-                color: FlutterFlowTheme.of(context).alternate,
-                size: 20.0,
+              child: InkWell(
+                splashColor: Colors.transparent,
+                focusColor: Colors.transparent,
+                hoverColor: Colors.transparent,
+                highlightColor: Colors.transparent,
+                onTap: () async {
+                  context.pushNamed(Adm003Widget.routeName);
+                },
+                child: Icon(
+                  Icons.keyboard_backspace,
+                  color: FlutterFlowTheme.of(context).alternate,
+                  size: 20.0,
+                ),
               ),
             ),
           ),
@@ -141,6 +150,7 @@ class _Adm005WidgetState extends State<Adm005Widget> {
                                           .headlineSmall
                                           .fontStyle,
                                     ),
+                                    fontSize: 18.0,
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.bold,
                                     fontStyle: FlutterFlowTheme.of(context)
@@ -159,28 +169,37 @@ class _Adm005WidgetState extends State<Adm005Widget> {
                                 alignment: AlignmentDirectional(0.0, 0.0),
                                 child: Padding(
                                   padding: EdgeInsets.all(8.0),
-                                  child: Text(
-                                    'ADM-005',
-                                    textAlign: TextAlign.center,
-                                    style: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .override(
-                                          font: GoogleFonts.inter(
+                                  child: InkWell(
+                                    splashColor: Colors.transparent,
+                                    focusColor: Colors.transparent,
+                                    hoverColor: Colors.transparent,
+                                    highlightColor: Colors.transparent,
+                                    onTap: () async {
+                                      context.pushNamed(Adm006Widget.routeName);
+                                    },
+                                    child: Text(
+                                      'ADM-005',
+                                      textAlign: TextAlign.center,
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .override(
+                                            font: GoogleFonts.inter(
+                                              fontWeight: FontWeight.w600,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontStyle,
+                                            ),
+                                            color: FlutterFlowTheme.of(context)
+                                                .alternate,
+                                            letterSpacing: 0.0,
                                             fontWeight: FontWeight.w600,
                                             fontStyle:
                                                 FlutterFlowTheme.of(context)
                                                     .bodyMedium
                                                     .fontStyle,
                                           ),
-                                          color: FlutterFlowTheme.of(context)
-                                              .alternate,
-                                          letterSpacing: 0.0,
-                                          fontWeight: FontWeight.w600,
-                                          fontStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodyMedium
-                                                  .fontStyle,
-                                        ),
+                                    ),
                                   ),
                                 ),
                               ),
@@ -1544,21 +1563,8 @@ class _Adm005WidgetState extends State<Adm005Widget> {
                                         ),
                                       ),
                                       FFButtonWidget(
-                                        onPressed: () async {
-                                          await UsuariosRecord.collection
-                                              .doc()
-                                              .set(createUsuariosRecordData(
-                                                nombreCompleto:
-                                                    _model.textController1.text,
-                                                correoElectronico:
-                                                    _model.textController2.text,
-                                                telefono: int.tryParse(_model
-                                                    .textController3.text),
-                                                nombreUsuario:
-                                                    _model.textController4.text,
-                                                contrasena:
-                                                    _model.textController5.text,
-                                              ));
+                                        onPressed: () {
+                                          print('Button pressed ...');
                                         },
                                         text: 'Registrar Usuario',
                                         options: FFButtonOptions(

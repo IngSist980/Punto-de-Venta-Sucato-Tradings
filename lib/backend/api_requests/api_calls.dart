@@ -1,4 +1,5 @@
 import 'dart:convert';
+
 import 'package:flutter/foundation.dart';
 
 import '/flutter_flow/flutter_flow_util.dart';
@@ -16,6 +17,7 @@ class CreateUserAPICall {
     String? photo = '',
     String? phoneNumber = '',
     String? rol = '',
+    bool? estado = true,
   }) async {
     final ffApiRequestBody = '''
 {
@@ -24,7 +26,8 @@ class CreateUserAPICall {
   "displayName": "${escapeStringForJson(displayName)}",
   "photo": "${escapeStringForJson(photo)}",
   "phoneNumber": "${escapeStringForJson(phoneNumber)}",
-  "rol": "${escapeStringForJson(rol)}"
+  "rol": "${escapeStringForJson(rol)}",
+  "estado": "${estado}"
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'createUserAPI',

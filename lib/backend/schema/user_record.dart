@@ -50,6 +50,16 @@ class UserRecord extends FirestoreRecord {
   String get rol => _rol ?? '';
   bool hasRol() => _rol != null;
 
+  // "estado" field.
+  bool? _estado;
+  bool get estado => _estado ?? false;
+  bool hasEstado() => _estado != null;
+
+  // "PuntoVenta" field.
+  DocumentReference? _puntoVenta;
+  DocumentReference? get puntoVenta => _puntoVenta;
+  bool hasPuntoVenta() => _puntoVenta != null;
+
   void _initializeFields() {
     _email = snapshotData['email'] as String?;
     _displayName = snapshotData['display_name'] as String?;
@@ -58,6 +68,8 @@ class UserRecord extends FirestoreRecord {
     _createdTime = snapshotData['created_time'] as DateTime?;
     _phoneNumber = snapshotData['phone_number'] as String?;
     _rol = snapshotData['rol'] as String?;
+    _estado = snapshotData['estado'] as bool?;
+    _puntoVenta = snapshotData['PuntoVenta'] as DocumentReference?;
   }
 
   static CollectionReference get collection =>
@@ -101,6 +113,8 @@ Map<String, dynamic> createUserRecordData({
   DateTime? createdTime,
   String? phoneNumber,
   String? rol,
+  bool? estado,
+  DocumentReference? puntoVenta,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -111,6 +125,8 @@ Map<String, dynamic> createUserRecordData({
       'created_time': createdTime,
       'phone_number': phoneNumber,
       'rol': rol,
+      'estado': estado,
+      'PuntoVenta': puntoVenta,
     }.withoutNulls,
   );
 
@@ -128,7 +144,9 @@ class UserRecordDocumentEquality implements Equality<UserRecord> {
         e1?.uid == e2?.uid &&
         e1?.createdTime == e2?.createdTime &&
         e1?.phoneNumber == e2?.phoneNumber &&
-        e1?.rol == e2?.rol;
+        e1?.rol == e2?.rol &&
+        e1?.estado == e2?.estado &&
+        e1?.puntoVenta == e2?.puntoVenta;
   }
 
   @override
@@ -139,7 +157,9 @@ class UserRecordDocumentEquality implements Equality<UserRecord> {
         e?.uid,
         e?.createdTime,
         e?.phoneNumber,
-        e?.rol
+        e?.rol,
+        e?.estado,
+        e?.puntoVenta
       ]);
 
   @override

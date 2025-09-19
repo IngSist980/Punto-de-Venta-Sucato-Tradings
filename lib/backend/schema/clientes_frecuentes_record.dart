@@ -50,6 +50,21 @@ class ClientesFrecuentesRecord extends FirestoreRecord {
   String get nombreCompleto => _nombreCompleto ?? '';
   bool hasNombreCompleto() => _nombreCompleto != null;
 
+  // "Codigo" field.
+  String? _codigo;
+  String get codigo => _codigo ?? '';
+  bool hasCodigo() => _codigo != null;
+
+  // "FechaEdicion" field.
+  DateTime? _fechaEdicion;
+  DateTime? get fechaEdicion => _fechaEdicion;
+  bool hasFechaEdicion() => _fechaEdicion != null;
+
+  // "Log" field.
+  List<LogEdicionClientesStruct>? _log;
+  List<LogEdicionClientesStruct> get log => _log ?? const [];
+  bool hasLog() => _log != null;
+
   void _initializeFields() {
     _razonSocial = snapshotData['RazonSocial'] as String?;
     _cedulaJuridica = snapshotData['CedulaJuridica'] as String?;
@@ -58,6 +73,12 @@ class ClientesFrecuentesRecord extends FirestoreRecord {
     _categoria = snapshotData['Categoria'] as String?;
     _direccion = snapshotData['Direccion'] as String?;
     _nombreCompleto = snapshotData['NombreCompleto'] as String?;
+    _codigo = snapshotData['Codigo'] as String?;
+    _fechaEdicion = snapshotData['FechaEdicion'] as DateTime?;
+    _log = getStructList(
+      snapshotData['Log'],
+      LogEdicionClientesStruct.fromMap,
+    );
   }
 
   static CollectionReference get collection =>
@@ -103,6 +124,8 @@ Map<String, dynamic> createClientesFrecuentesRecordData({
   String? categoria,
   String? direccion,
   String? nombreCompleto,
+  String? codigo,
+  DateTime? fechaEdicion,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -113,6 +136,8 @@ Map<String, dynamic> createClientesFrecuentesRecordData({
       'Categoria': categoria,
       'Direccion': direccion,
       'NombreCompleto': nombreCompleto,
+      'Codigo': codigo,
+      'FechaEdicion': fechaEdicion,
     }.withoutNulls,
   );
 
@@ -125,13 +150,17 @@ class ClientesFrecuentesRecordDocumentEquality
 
   @override
   bool equals(ClientesFrecuentesRecord? e1, ClientesFrecuentesRecord? e2) {
+    const listEquality = ListEquality();
     return e1?.razonSocial == e2?.razonSocial &&
         e1?.cedulaJuridica == e2?.cedulaJuridica &&
         e1?.telefono == e2?.telefono &&
         e1?.usuarioRef == e2?.usuarioRef &&
         e1?.categoria == e2?.categoria &&
         e1?.direccion == e2?.direccion &&
-        e1?.nombreCompleto == e2?.nombreCompleto;
+        e1?.nombreCompleto == e2?.nombreCompleto &&
+        e1?.codigo == e2?.codigo &&
+        e1?.fechaEdicion == e2?.fechaEdicion &&
+        listEquality.equals(e1?.log, e2?.log);
   }
 
   @override
@@ -142,7 +171,10 @@ class ClientesFrecuentesRecordDocumentEquality
         e?.usuarioRef,
         e?.categoria,
         e?.direccion,
-        e?.nombreCompleto
+        e?.nombreCompleto,
+        e?.codigo,
+        e?.fechaEdicion,
+        e?.log
       ]);
 
   @override

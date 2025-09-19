@@ -1,5 +1,5 @@
 // Export pages
-export '/pages/admin/login/a_d_m_001_iniciar_sesion/a_d_m001_iniciar_sesion_widget.dart'
+export '/nuevo/login/a_d_m_001_iniciar_sesion/a_d_m001_iniciar_sesion_widget.dart'
     show ADM001IniciarSesionWidget;
 export '/pages/admin/adm_005/adm005_widget.dart' show Adm005Widget;
 export '/pages/admin/adm_006/adm006_widget.dart' show Adm006Widget;
@@ -33,12 +33,17 @@ export '/pages/reporteria/rep005/rep005_widget.dart' show Rep005Widget;
 export '/pages/reporteria/rep006/rep006_widget.dart' show Rep006Widget;
 export '/pages/punto_venta/pv011/pv011_widget.dart' show Pv011Widget;
 export '/pages/punto_venta/pv001/pv001_widget.dart' show Pv001Widget;
-export '/pages/admin/login/crearcuenta/crearcuenta_widget.dart'
+export '/nuevo/login/crearcuenta/crearcuenta_widget.dart'
     show CrearcuentaWidget;
-export '/pages/admin/login/a_d_m_002_recovery_pass/a_d_m002_recovery_pass_widget.dart'
+export '/nuevo/login/a_d_m_002_recovery_pass/a_d_m002_recovery_pass_widget.dart'
     show ADM002RecoveryPassWidget;
-export '/dashboard/dashboard/dashboard_widget.dart' show DashboardWidget;
-export '/dashboard/clientes/c_r_d_clientes/c_r_d_clientes_widget.dart'
-    show CRDClientesWidget;
-export '/dashboard/empleados/c_r_d_empleados/c_r_d_empleados_widget.dart'
-    show CRDEmpleadosWidget;
+export '/nuevo/dashboard/dashboard/dashboard/dashboard_widget.dart'
+    show DashboardWidget;
+export '/nuevo/dashboard/clientes/create_read_clientes/create_read_clientes_widget.dart'
+    show CreateReadClientesWidget;
+export '/nuevo/dashboard/empleados/create_read_empleados/create_read_empleados_widget.dart'
+    show CreateReadEmpleadosWidget;
+export '/nuevo/dashboard/inventario/productos/create_read_inventario/create_read_inventario_widget.dart'
+    show CreateReadInventarioWidget;
+export '/nuevo/dashboard/inventario/proveedores/create_read_proveedor/create_read_proveedor_widget.dart'
+    show CreateReadProveedorWidget;

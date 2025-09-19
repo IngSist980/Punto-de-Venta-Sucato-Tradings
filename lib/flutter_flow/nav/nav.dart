@@ -2,6 +2,8 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import '/backend/backend.dart';
+import '/backend/schema/structs/index.dart';
 
 import '/auth/base_auth_user_provider.dart';
 
@@ -267,14 +269,24 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => DashboardWidget(),
         ),
         FFRoute(
-          name: CRDClientesWidget.routeName,
-          path: CRDClientesWidget.routePath,
-          builder: (context, params) => CRDClientesWidget(),
+          name: CreateReadClientesWidget.routeName,
+          path: CreateReadClientesWidget.routePath,
+          builder: (context, params) => CreateReadClientesWidget(),
         ),
         FFRoute(
-          name: CRDEmpleadosWidget.routeName,
-          path: CRDEmpleadosWidget.routePath,
-          builder: (context, params) => CRDEmpleadosWidget(),
+          name: CreateReadEmpleadosWidget.routeName,
+          path: CreateReadEmpleadosWidget.routePath,
+          builder: (context, params) => CreateReadEmpleadosWidget(),
+        ),
+        FFRoute(
+          name: CreateReadInventarioWidget.routeName,
+          path: CreateReadInventarioWidget.routePath,
+          builder: (context, params) => CreateReadInventarioWidget(),
+        ),
+        FFRoute(
+          name: CreateReadProveedorWidget.routeName,
+          path: CreateReadProveedorWidget.routePath,
+          builder: (context, params) => CreateReadProveedorWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
@@ -394,6 +406,7 @@ class FFParameters {
     ParamType type, {
     bool isList = false,
     List<String>? collectionNamePath,
+    StructBuilder<T>? structBuilder,
   }) {
     if (futureParamValues.containsKey(paramName)) {
       return futureParamValues[paramName];
@@ -412,6 +425,7 @@ class FFParameters {
       type,
       isList,
       collectionNamePath: collectionNamePath,
+      structBuilder: structBuilder,
     );
   }
 }

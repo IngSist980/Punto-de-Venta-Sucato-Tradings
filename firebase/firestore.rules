@@ -14,5 +14,55 @@ service cloud.firestore {
       allow write: if request.auth != null;
       allow delete: if request.auth != null;
     }
+
+    match /loginAttempts/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if false;
+      allow delete: if false;
+    }
+
+    match /PuntoDeVenta/{document} {
+      allow create: if request.auth != null;
+      allow read: if request.auth != null;
+      allow write: if request.auth != null;
+      allow delete: if request.auth != null;
+    }
+
+    match /PuntoDeVenta/{parent}/Productos/{document} {
+      allow create: if request.auth != null;
+      allow read: if request.auth != null;
+      allow write: if request.auth != null;
+      allow delete: if request.auth != null;
+    }
+
+    match /{path=**}/Productos/{document} {
+      allow read: if request.auth != null;
+    }
+
+
+    match /PuntoDeVenta/{parent}/Categorias/{document} {
+      allow create: if request.auth != null;
+      allow read: if request.auth != null;
+      allow write: if request.auth != null;
+      allow delete: if request.auth != null;
+    }
+
+    match /{path=**}/Categorias/{document} {
+      allow read: if request.auth != null;
+    }
+
+
+    match /PuntoDeVenta/{parent}/Proveedores/{document} {
+      allow create: if request.auth != null;
+      allow read: if request.auth != null;
+      allow write: if request.auth != null;
+      allow delete: if request.auth != null;
+    }
+
+    match /{path=**}/Proveedores/{document} {
+      allow read: if request.auth != null;
+    }
+
   }
 }

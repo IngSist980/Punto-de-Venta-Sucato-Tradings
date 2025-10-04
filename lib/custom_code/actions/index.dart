@@ -1,2 +1,3 @@
 export 'custom_toastification.dart' show customToastification;
-export 'create_user_fire_base.dart' show createUserFireBase;
+export 'update_productos.dart' show updateProductos;
+export 'crear_factura.dart' show crearFactura;

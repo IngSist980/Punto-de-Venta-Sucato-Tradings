@@ -65,6 +65,21 @@ class ClientesFrecuentesRecord extends FirestoreRecord {
   List<LogEdicionClientesStruct> get log => _log ?? const [];
   bool hasLog() => _log != null;
 
+  // "Telefono2" field.
+  String? _telefono2;
+  String get telefono2 => _telefono2 ?? '';
+  bool hasTelefono2() => _telefono2 != null;
+
+  // "CantidaOrdenes" field.
+  int? _cantidaOrdenes;
+  int get cantidaOrdenes => _cantidaOrdenes ?? 0;
+  bool hasCantidaOrdenes() => _cantidaOrdenes != null;
+
+  // "estado" field.
+  bool? _estado;
+  bool get estado => _estado ?? false;
+  bool hasEstado() => _estado != null;
+
   void _initializeFields() {
     _razonSocial = snapshotData['RazonSocial'] as String?;
     _cedulaJuridica = snapshotData['CedulaJuridica'] as String?;
@@ -79,6 +94,9 @@ class ClientesFrecuentesRecord extends FirestoreRecord {
       snapshotData['Log'],
       LogEdicionClientesStruct.fromMap,
     );
+    _telefono2 = snapshotData['Telefono2'] as String?;
+    _cantidaOrdenes = castToType<int>(snapshotData['CantidaOrdenes']);
+    _estado = snapshotData['estado'] as bool?;
   }
 
   static CollectionReference get collection =>
@@ -126,6 +144,9 @@ Map<String, dynamic> createClientesFrecuentesRecordData({
   String? nombreCompleto,
   String? codigo,
   DateTime? fechaEdicion,
+  String? telefono2,
+  int? cantidaOrdenes,
+  bool? estado,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -138,6 +159,9 @@ Map<String, dynamic> createClientesFrecuentesRecordData({
       'NombreCompleto': nombreCompleto,
       'Codigo': codigo,
       'FechaEdicion': fechaEdicion,
+      'Telefono2': telefono2,
+      'CantidaOrdenes': cantidaOrdenes,
+      'estado': estado,
     }.withoutNulls,
   );
 
@@ -160,7 +184,10 @@ class ClientesFrecuentesRecordDocumentEquality
         e1?.nombreCompleto == e2?.nombreCompleto &&
         e1?.codigo == e2?.codigo &&
         e1?.fechaEdicion == e2?.fechaEdicion &&
-        listEquality.equals(e1?.log, e2?.log);
+        listEquality.equals(e1?.log, e2?.log) &&
+        e1?.telefono2 == e2?.telefono2 &&
+        e1?.cantidaOrdenes == e2?.cantidaOrdenes &&
+        e1?.estado == e2?.estado;
   }
 
   @override
@@ -174,7 +201,10 @@ class ClientesFrecuentesRecordDocumentEquality
         e?.nombreCompleto,
         e?.codigo,
         e?.fechaEdicion,
-        e?.log
+        e?.log,
+        e?.telefono2,
+        e?.cantidaOrdenes,
+        e?.estado
       ]);
 
   @override

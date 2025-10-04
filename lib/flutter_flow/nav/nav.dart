@@ -3,7 +3,6 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '/backend/backend.dart';
-import '/backend/schema/structs/index.dart';
 
 import '/auth/base_auth_user_provider.dart';
 
@@ -77,181 +76,20 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       debugLogDiagnostics: true,
       refreshListenable: appStateNotifier,
       navigatorKey: appNavigatorKey,
-      errorBuilder: (context, state) => appStateNotifier.loggedIn
-          ? DashboardWidget()
-          : ADM001IniciarSesionWidget(),
+      errorBuilder: (context, state) =>
+          appStateNotifier.loggedIn ? DashboardWidget() : CrearcuentaWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
           builder: (context, _) => appStateNotifier.loggedIn
               ? DashboardWidget()
-              : ADM001IniciarSesionWidget(),
+              : CrearcuentaWidget(),
         ),
         FFRoute(
           name: ADM001IniciarSesionWidget.routeName,
           path: ADM001IniciarSesionWidget.routePath,
           builder: (context, params) => ADM001IniciarSesionWidget(),
-        ),
-        FFRoute(
-          name: Adm005Widget.routeName,
-          path: Adm005Widget.routePath,
-          builder: (context, params) => Adm005Widget(),
-        ),
-        FFRoute(
-          name: Adm006Widget.routeName,
-          path: Adm006Widget.routePath,
-          builder: (context, params) => Adm006Widget(),
-        ),
-        FFRoute(
-          name: Adm003Widget.routeName,
-          path: Adm003Widget.routePath,
-          builder: (context, params) => Adm003Widget(),
-        ),
-        FFRoute(
-          name: Pv002Widget.routeName,
-          path: Pv002Widget.routePath,
-          builder: (context, params) => Pv002Widget(),
-        ),
-        FFRoute(
-          name: Adm004Widget.routeName,
-          path: Adm004Widget.routePath,
-          builder: (context, params) => Adm004Widget(),
-        ),
-        FFRoute(
-          name: Inv008Widget.routeName,
-          path: Inv008Widget.routePath,
-          builder: (context, params) => Inv008Widget(),
-        ),
-        FFRoute(
-          name: Inv003Widget.routeName,
-          path: Inv003Widget.routePath,
-          builder: (context, params) => Inv003Widget(),
-        ),
-        FFRoute(
-          name: Inv002Widget.routeName,
-          path: Inv002Widget.routePath,
-          builder: (context, params) => Inv002Widget(),
-        ),
-        FFRoute(
-          name: Inv001Widget.routeName,
-          path: Inv001Widget.routePath,
-          builder: (context, params) => Inv001Widget(),
-        ),
-        FFRoute(
-          name: Inv004Widget.routeName,
-          path: Inv004Widget.routePath,
-          builder: (context, params) => Inv004Widget(),
-        ),
-        FFRoute(
-          name: Inv005Widget.routeName,
-          path: Inv005Widget.routePath,
-          builder: (context, params) => Inv005Widget(),
-        ),
-        FFRoute(
-          name: Inv009Widget.routeName,
-          path: Inv009Widget.routePath,
-          builder: (context, params) => Inv009Widget(),
-        ),
-        FFRoute(
-          name: Inv007Widget.routeName,
-          path: Inv007Widget.routePath,
-          builder: (context, params) => Inv007Widget(),
-        ),
-        FFRoute(
-          name: Ord001Widget.routeName,
-          path: Ord001Widget.routePath,
-          builder: (context, params) => Ord001Widget(),
-        ),
-        FFRoute(
-          name: Ord002Widget.routeName,
-          path: Ord002Widget.routePath,
-          builder: (context, params) => Ord002Widget(),
-        ),
-        FFRoute(
-          name: Ctb001Widget.routeName,
-          path: Ctb001Widget.routePath,
-          builder: (context, params) => Ctb001Widget(),
-        ),
-        FFRoute(
-          name: Ctb004Widget.routeName,
-          path: Ctb004Widget.routePath,
-          builder: (context, params) => Ctb004Widget(),
-        ),
-        FFRoute(
-          name: Ctb003Widget.routeName,
-          path: Ctb003Widget.routePath,
-          builder: (context, params) => Ctb003Widget(),
-        ),
-        FFRoute(
-          name: Ctb006Widget.routeName,
-          path: Ctb006Widget.routePath,
-          builder: (context, params) => Ctb006Widget(),
-        ),
-        FFRoute(
-          name: Ctb005Widget.routeName,
-          path: Ctb005Widget.routePath,
-          builder: (context, params) => Ctb005Widget(),
-        ),
-        FFRoute(
-          name: Ctb002Widget.routeName,
-          path: Ctb002Widget.routePath,
-          builder: (context, params) => Ctb002Widget(),
-        ),
-        FFRoute(
-          name: Pv007Widget.routeName,
-          path: Pv007Widget.routePath,
-          builder: (context, params) => Pv007Widget(),
-        ),
-        FFRoute(
-          name: Pv003Widget.routeName,
-          path: Pv003Widget.routePath,
-          builder: (context, params) => Pv003Widget(),
-        ),
-        FFRoute(
-          name: Pv008Widget.routeName,
-          path: Pv008Widget.routePath,
-          builder: (context, params) => Pv008Widget(),
-        ),
-        FFRoute(
-          name: Pv009Widget.routeName,
-          path: Pv009Widget.routePath,
-          builder: (context, params) => Pv009Widget(),
-        ),
-        FFRoute(
-          name: Rep001Widget.routeName,
-          path: Rep001Widget.routePath,
-          builder: (context, params) => Rep001Widget(),
-        ),
-        FFRoute(
-          name: Rep003Widget.routeName,
-          path: Rep003Widget.routePath,
-          builder: (context, params) => Rep003Widget(),
-        ),
-        FFRoute(
-          name: Rep004Widget.routeName,
-          path: Rep004Widget.routePath,
-          builder: (context, params) => Rep004Widget(),
-        ),
-        FFRoute(
-          name: Rep005Widget.routeName,
-          path: Rep005Widget.routePath,
-          builder: (context, params) => Rep005Widget(),
-        ),
-        FFRoute(
-          name: Rep006Widget.routeName,
-          path: Rep006Widget.routePath,
-          builder: (context, params) => Rep006Widget(),
-        ),
-        FFRoute(
-          name: Pv011Widget.routeName,
-          path: Pv011Widget.routePath,
-          builder: (context, params) => Pv011Widget(),
-        ),
-        FFRoute(
-          name: Pv001Widget.routeName,
-          path: Pv001Widget.routePath,
-          builder: (context, params) => Pv001Widget(),
         ),
         FFRoute(
           name: CrearcuentaWidget.routeName,
@@ -287,6 +125,137 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: CreateReadProveedorWidget.routeName,
           path: CreateReadProveedorWidget.routePath,
           builder: (context, params) => CreateReadProveedorWidget(),
+        ),
+        FFRoute(
+          name: CreateReadIKitsWidget.routeName,
+          path: CreateReadIKitsWidget.routePath,
+          builder: (context, params) => CreateReadIKitsWidget(),
+        ),
+        FFRoute(
+          name: ReadReporteWidget.routeName,
+          path: ReadReporteWidget.routePath,
+          builder: (context, params) => ReadReporteWidget(),
+        ),
+        FFRoute(
+          name: CreateReadOrdenesProveedorWidget.routeName,
+          path: CreateReadOrdenesProveedorWidget.routePath,
+          builder: (context, params) => CreateReadOrdenesProveedorWidget(),
+        ),
+        FFRoute(
+          name: TiendaWidget.routeName,
+          path: TiendaWidget.routePath,
+          builder: (context, params) => TiendaWidget(),
+        ),
+        FFRoute(
+          name: CreatePedidoWidget.routeName,
+          path: CreatePedidoWidget.routePath,
+          builder: (context, params) => CreatePedidoWidget(),
+        ),
+        FFRoute(
+          name: ReadPedidosWidget.routeName,
+          path: ReadPedidosWidget.routePath,
+          builder: (context, params) => ReadPedidosWidget(),
+        ),
+        FFRoute(
+          name: ProductosEnOrdenWidget.routeName,
+          path: ProductosEnOrdenWidget.routePath,
+          builder: (context, params) => ProductosEnOrdenWidget(
+            productosEnLaOrden: params.getParam<ProductosOrdenesClientesStruct>(
+              'productosEnLaOrden',
+              ParamType.DataStruct,
+              isList: true,
+              structBuilder: ProductosOrdenesClientesStruct.fromSerializableMap,
+            ),
+          ),
+        ),
+        FFRoute(
+          name: EditorProductosWidget.routeName,
+          path: EditorProductosWidget.routePath,
+          builder: (context, params) => EditorProductosWidget(
+            produtosEnLaOrden: params.getParam<ProductosOrdenesClientesStruct>(
+              'produtosEnLaOrden',
+              ParamType.DataStruct,
+              isList: true,
+              structBuilder: ProductosOrdenesClientesStruct.fromSerializableMap,
+            ),
+            refOrden: params.getParam(
+              'refOrden',
+              ParamType.DocumentReference,
+              isList: false,
+              collectionNamePath: ['PuntoDeVenta', 'OdenCompra'],
+            ),
+          ),
+        ),
+        FFRoute(
+          name: FacturaWidget.routeName,
+          path: FacturaWidget.routePath,
+          asyncParams: {
+            'orden': getDoc(
+                ['PuntoDeVenta', 'OdenCompra'], OdenCompraRecord.fromSnapshot),
+          },
+          builder: (context, params) => FacturaWidget(
+            orden: params.getParam(
+              'orden',
+              ParamType.Document,
+            ),
+          ),
+        ),
+        FFRoute(
+          name: CreateReadRepartidorWidget.routeName,
+          path: CreateReadRepartidorWidget.routePath,
+          builder: (context, params) => CreateReadRepartidorWidget(),
+        ),
+        FFRoute(
+          name: DespachosWidget.routeName,
+          path: DespachosWidget.routePath,
+          builder: (context, params) => DespachosWidget(),
+        ),
+        FFRoute(
+          name: ReadDevolucionesWidget.routeName,
+          path: ReadDevolucionesWidget.routePath,
+          builder: (context, params) => ReadDevolucionesWidget(),
+        ),
+        FFRoute(
+          name: ReporteDeVentasWidget.routeName,
+          path: ReporteDeVentasWidget.routePath,
+          builder: (context, params) => ReporteDeVentasWidget(),
+        ),
+        FFRoute(
+          name: ReporteDeVentasPendientesWidget.routeName,
+          path: ReporteDeVentasPendientesWidget.routePath,
+          builder: (context, params) => ReporteDeVentasPendientesWidget(),
+        ),
+        FFRoute(
+          name: ReporteProductosMasVendidosWidget.routeName,
+          path: ReporteProductosMasVendidosWidget.routePath,
+          builder: (context, params) => ReporteProductosMasVendidosWidget(),
+        ),
+        FFRoute(
+          name: ReporteInventarioWidget.routeName,
+          path: ReporteInventarioWidget.routePath,
+          builder: (context, params) => ReporteInventarioWidget(),
+        ),
+        FFRoute(
+          name: ReporteComprasProveedoresWidget.routeName,
+          path: ReporteComprasProveedoresWidget.routePath,
+          builder: (context, params) => ReporteComprasProveedoresWidget(),
+        ),
+        FFRoute(
+          name: CajaCerradaWidget.routeName,
+          path: CajaCerradaWidget.routePath,
+          builder: (context, params) => CajaCerradaWidget(
+            refAjustesApp: params.getParam(
+              'refAjustesApp',
+              ParamType.DocumentReference,
+              isList: false,
+              collectionNamePath: ['AjustesApp'],
+            ),
+          ),
+        ),
+        FFRoute(
+          name: ReporteDeVentasHoyWidget.routeName,
+          path: ReporteDeVentasHoyWidget.routePath,
+          builder: (context, params) => ReporteDeVentasHoyWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
@@ -459,7 +428,7 @@ class FFRoute {
 
           if (requireAuth && !appStateNotifier.loggedIn) {
             appStateNotifier.setRedirectLocationIfUnset(state.uri.toString());
-            return '/aDM001IniciarSesion';
+            return '/crearcuenta';
           }
           return null;
         },

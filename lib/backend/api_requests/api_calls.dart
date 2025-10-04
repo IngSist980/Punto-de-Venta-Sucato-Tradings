@@ -18,6 +18,7 @@ class CreateUserAPICall {
     String? phoneNumber = '',
     String? rol = '',
     bool? estado = true,
+    String? phoneNumber2 = '',
   }) async {
     final ffApiRequestBody = '''
 {
@@ -26,6 +27,7 @@ class CreateUserAPICall {
   "displayName": "${escapeStringForJson(displayName)}",
   "photo": "${escapeStringForJson(photo)}",
   "phoneNumber": "${escapeStringForJson(phoneNumber)}",
+  "phoneNumber2": "${escapeStringForJson(phoneNumber2)}",
   "rol": "${escapeStringForJson(rol)}",
   "estado": "${estado}"
 }''';

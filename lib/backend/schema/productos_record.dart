@@ -60,6 +60,46 @@ class ProductosRecord extends FirestoreRecord {
   String get sku => _sku ?? '';
   bool hasSku() => _sku != null;
 
+  // "Caducidad" field.
+  DateTime? _caducidad;
+  DateTime? get caducidad => _caducidad;
+  bool hasCaducidad() => _caducidad != null;
+
+  // "Calorias" field.
+  int? _calorias;
+  int get calorias => _calorias ?? 0;
+  bool hasCalorias() => _calorias != null;
+
+  // "ComentarioAjuste" field.
+  String? _comentarioAjuste;
+  String get comentarioAjuste => _comentarioAjuste ?? '';
+  bool hasComentarioAjuste() => _comentarioAjuste != null;
+
+  // "ProveedorRef" field.
+  DocumentReference? _proveedorRef;
+  DocumentReference? get proveedorRef => _proveedorRef;
+  bool hasProveedorRef() => _proveedorRef != null;
+
+  // "ProveedorName" field.
+  String? _proveedorName;
+  String get proveedorName => _proveedorName ?? '';
+  bool hasProveedorName() => _proveedorName != null;
+
+  // "CaducidadValue" field.
+  int? _caducidadValue;
+  int get caducidadValue => _caducidadValue ?? 0;
+  bool hasCaducidadValue() => _caducidadValue != null;
+
+  // "CantidadVendidas" field.
+  int? _cantidadVendidas;
+  int get cantidadVendidas => _cantidadVendidas ?? 0;
+  bool hasCantidadVendidas() => _cantidadVendidas != null;
+
+  // "Lote" field.
+  String? _lote;
+  String get lote => _lote ?? '';
+  bool hasLote() => _lote != null;
+
   DocumentReference get parentReference => reference.parent.parent!;
 
   void _initializeFields() {
@@ -72,6 +112,14 @@ class ProductosRecord extends FirestoreRecord {
     _createdTime = snapshotData['Created_Time'] as DateTime?;
     _imagen = snapshotData['Imagen'] as String?;
     _sku = snapshotData['SKU'] as String?;
+    _caducidad = snapshotData['Caducidad'] as DateTime?;
+    _calorias = castToType<int>(snapshotData['Calorias']);
+    _comentarioAjuste = snapshotData['ComentarioAjuste'] as String?;
+    _proveedorRef = snapshotData['ProveedorRef'] as DocumentReference?;
+    _proveedorName = snapshotData['ProveedorName'] as String?;
+    _caducidadValue = castToType<int>(snapshotData['CaducidadValue']);
+    _cantidadVendidas = castToType<int>(snapshotData['CantidadVendidas']);
+    _lote = snapshotData['Lote'] as String?;
   }
 
   static Query<Map<String, dynamic>> collection([DocumentReference? parent]) =>
@@ -123,6 +171,14 @@ Map<String, dynamic> createProductosRecordData({
   DateTime? createdTime,
   String? imagen,
   String? sku,
+  DateTime? caducidad,
+  int? calorias,
+  String? comentarioAjuste,
+  DocumentReference? proveedorRef,
+  String? proveedorName,
+  int? caducidadValue,
+  int? cantidadVendidas,
+  String? lote,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -135,6 +191,14 @@ Map<String, dynamic> createProductosRecordData({
       'Created_Time': createdTime,
       'Imagen': imagen,
       'SKU': sku,
+      'Caducidad': caducidad,
+      'Calorias': calorias,
+      'ComentarioAjuste': comentarioAjuste,
+      'ProveedorRef': proveedorRef,
+      'ProveedorName': proveedorName,
+      'CaducidadValue': caducidadValue,
+      'CantidadVendidas': cantidadVendidas,
+      'Lote': lote,
     }.withoutNulls,
   );
 
@@ -154,7 +218,15 @@ class ProductosRecordDocumentEquality implements Equality<ProductosRecord> {
         e1?.cantidad == e2?.cantidad &&
         e1?.createdTime == e2?.createdTime &&
         e1?.imagen == e2?.imagen &&
-        e1?.sku == e2?.sku;
+        e1?.sku == e2?.sku &&
+        e1?.caducidad == e2?.caducidad &&
+        e1?.calorias == e2?.calorias &&
+        e1?.comentarioAjuste == e2?.comentarioAjuste &&
+        e1?.proveedorRef == e2?.proveedorRef &&
+        e1?.proveedorName == e2?.proveedorName &&
+        e1?.caducidadValue == e2?.caducidadValue &&
+        e1?.cantidadVendidas == e2?.cantidadVendidas &&
+        e1?.lote == e2?.lote;
   }
 
   @override
@@ -167,7 +239,15 @@ class ProductosRecordDocumentEquality implements Equality<ProductosRecord> {
         e?.cantidad,
         e?.createdTime,
         e?.imagen,
-        e?.sku
+        e?.sku,
+        e?.caducidad,
+        e?.calorias,
+        e?.comentarioAjuste,
+        e?.proveedorRef,
+        e?.proveedorName,
+        e?.caducidadValue,
+        e?.cantidadVendidas,
+        e?.lote
       ]);
 
   @override

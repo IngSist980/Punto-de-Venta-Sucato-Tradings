@@ -27,15 +27,169 @@
           "order": "DESCENDING"
         }
       ]
+    },
+    {
+      "collectionGroup": "Productos",
+      "queryScope": "COLLECTION_GROUP",
+      "fields": [
+        {
+          "fieldPath": "Categoria",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "Estado",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "CaducidadValue",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "Created_Time",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "Proveedores",
+      "queryScope": "COLLECTION_GROUP",
+      "fields": [
+        {
+          "fieldPath": "Estado",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "FechaCreacion",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "Kits",
+      "queryScope": "COLLECTION_GROUP",
+      "fields": [
+        {
+          "fieldPath": "Estado",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "CaducidadValue",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "NombreKit",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "OrdenesProveedor",
+      "queryScope": "COLLECTION_GROUP",
+      "fields": [
+        {
+          "fieldPath": "Estado",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "FechaEmision",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "OdenCompra",
+      "queryScope": "COLLECTION_GROUP",
+      "fields": [
+        {
+          "fieldPath": "Estado",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "FechaEmision",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "OdenCompra",
+      "queryScope": "COLLECTION_GROUP",
+      "fields": [
+        {
+          "fieldPath": "Despachado",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "Estado",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "EntregaPersonal",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "FechaEmision",
+          "order": "DESCENDING"
+        }
+      ]
     }
   ],
   "fieldOverrides": [
     {
-      "collectionGroup": "Productos",
-      "fieldPath": "Created_Time",
+      "collectionGroup": "Proveedores",
+      "fieldPath": "NombreProveedor",
       "indexes": [
         {
           "order": "DESCENDING",
+          "queryScope": "COLLECTION_GROUP"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "Repartidor",
+      "fieldPath": "Estado",
+      "indexes": [
+        {
+          "order": "ASCENDING",
+          "queryScope": "COLLECTION_GROUP"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "Devoluciones",
+      "fieldPath": "FechaDevolucion",
+      "indexes": [
+        {
+          "order": "DESCENDING",
+          "queryScope": "COLLECTION_GROUP"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "CreditosDevoluciones",
+      "fieldPath": "refDevolucion",
+      "indexes": [
+        {
+          "order": "ASCENDING",
+          "queryScope": "COLLECTION_GROUP"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "OdenCompra",
+      "fieldPath": "Estado",
+      "indexes": [
+        {
+          "order": "ASCENDING",
+          "queryScope": "COLLECTION_GROUP"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "CreditosDevoluciones",
+      "fieldPath": "Code",
+      "indexes": [
+        {
+          "order": "ASCENDING",
           "queryScope": "COLLECTION_GROUP"
         }
       ]

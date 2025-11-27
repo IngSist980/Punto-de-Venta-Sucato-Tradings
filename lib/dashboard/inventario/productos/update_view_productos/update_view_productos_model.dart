@@ -15,7 +15,7 @@ class UpdateViewProductosModel
   final formKey = GlobalKey<FormState>();
   bool isDataUploading_uploadDataJq7 = false;
   FFUploadedFile uploadedLocalFile_uploadDataJq7 =
-      FFUploadedFile(bytes: Uint8List.fromList([]));
+      FFUploadedFile(bytes: Uint8List.fromList([]), originalFilename: '');
   String uploadedFileUrl_uploadDataJq7 = '';
 
   // State field(s) for Estado widget.

@@ -71,6 +71,8 @@ class _ViewProductosWidgetState extends State<ViewProductosWidget>
         ],
       ),
     });
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

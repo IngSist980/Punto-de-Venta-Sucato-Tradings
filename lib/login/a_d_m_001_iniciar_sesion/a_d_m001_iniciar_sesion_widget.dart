@@ -39,6 +39,8 @@ class _ADM001IniciarSesionWidgetState extends State<ADM001IniciarSesionWidget> {
 
     _model.passTextController ??= TextEditingController();
     _model.passFocusNode ??= FocusNode();
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

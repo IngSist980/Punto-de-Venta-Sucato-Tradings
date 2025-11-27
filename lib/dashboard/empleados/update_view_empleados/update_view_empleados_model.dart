@@ -11,7 +11,7 @@ class UpdateViewEmpleadosModel
   final formKey = GlobalKey<FormState>();
   bool isDataUploading_uploadDataGl4 = false;
   FFUploadedFile uploadedLocalFile_uploadDataGl4 =
-      FFUploadedFile(bytes: Uint8List.fromList([]));
+      FFUploadedFile(bytes: Uint8List.fromList([]), originalFilename: '');
   String uploadedFileUrl_uploadDataGl4 = '';
 
   // State field(s) for Estado widget.

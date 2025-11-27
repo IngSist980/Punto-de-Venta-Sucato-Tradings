@@ -121,6 +121,8 @@ class _UpdateViewProveedorWidgetState extends State<UpdateViewProveedorWidget>
         ],
       ),
     });
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

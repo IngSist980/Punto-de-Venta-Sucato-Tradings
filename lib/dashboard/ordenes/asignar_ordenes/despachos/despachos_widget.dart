@@ -39,6 +39,8 @@ class _DespachosWidgetState extends State<DespachosWidget> {
 
     _model.buscarTextController ??= TextEditingController();
     _model.buscarFocusNode ??= FocusNode();
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -390,6 +392,7 @@ class _DespachosWidgetState extends State<DespachosWidget> {
                                       safeSetState(() {
                                         _model.dropDownDespachadoValueController
                                             ?.reset();
+                                        _model.dropDownDespachadoValue = null;
                                       });
                                     },
                                   ),

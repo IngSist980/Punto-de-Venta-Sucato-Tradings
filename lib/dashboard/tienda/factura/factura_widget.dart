@@ -1209,7 +1209,8 @@ class _FacturaWidgetState extends State<FacturaWidget>
                                                                   .circular(
                                                                       8.0),
                                                           child: Image.network(
-                                                            'https://picsum.photos/seed/677/600',
+                                                            productosCarritoListItem
+                                                                .fotoProducto,
                                                             width: 60.0,
                                                             height: 60.0,
                                                             fit: BoxFit.cover,

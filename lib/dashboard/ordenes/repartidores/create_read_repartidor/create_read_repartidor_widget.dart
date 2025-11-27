@@ -68,6 +68,8 @@ class _CreateReadRepartidorWidgetState extends State<CreateReadRepartidorWidget>
 
     _model.placaTextController ??= TextEditingController();
     _model.placaFocusNode ??= FocusNode();
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -1967,6 +1969,8 @@ class _CreateReadRepartidorWidgetState extends State<CreateReadRepartidorWidget>
                                                       _model
                                                           .dropDownEstadoValueController
                                                           ?.reset();
+                                                      _model.dropDownEstadoValue =
+                                                          null;
                                                     });
                                                   }),
                                                   Future(() async {

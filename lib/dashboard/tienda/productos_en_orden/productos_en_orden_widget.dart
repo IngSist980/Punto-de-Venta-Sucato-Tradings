@@ -34,6 +34,8 @@ class _ProductosEnOrdenWidgetState extends State<ProductosEnOrdenWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => ProductosEnOrdenModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

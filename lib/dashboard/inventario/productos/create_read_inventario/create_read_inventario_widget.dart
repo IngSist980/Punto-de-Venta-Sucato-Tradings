@@ -104,6 +104,8 @@ class _CreateReadInventarioWidgetState extends State<CreateReadInventarioWidget>
         ],
       ),
     });
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -922,12 +924,18 @@ class _CreateReadInventarioWidgetState extends State<CreateReadInventarioWidget>
                                                                   _model
                                                                       .dropDownCategoriafiltroValueController
                                                                       ?.reset();
+                                                                  _model.dropDownCategoriafiltroValue =
+                                                                      null;
                                                                   _model
                                                                       .dropDownEstadoValueController
                                                                       ?.reset();
+                                                                  _model.dropDownEstadoValue =
+                                                                      null;
                                                                   _model
                                                                       .dropDownCaducidadValueController
                                                                       ?.reset();
+                                                                  _model.dropDownCaducidadValue =
+                                                                      null;
                                                                 });
                                                                 safeSetState(
                                                                     () {
@@ -1806,6 +1814,7 @@ class _CreateReadInventarioWidgetState extends State<CreateReadInventarioWidget>
                                                                                 height: m.dimensions?.height,
                                                                                 width: m.dimensions?.width,
                                                                                 blurHash: m.blurHash,
+                                                                                originalFilename: m.originalFilename,
                                                                               ))
                                                                           .toList();
 
@@ -3885,6 +3894,8 @@ class _CreateReadInventarioWidgetState extends State<CreateReadInventarioWidget>
                                                             _model
                                                                 .dropDownCategoriafiltroValueController
                                                                 ?.reset();
+                                                            _model.dropDownCategoriafiltroValue =
+                                                                null;
                                                           });
                                                           safeSetState(() {
                                                             _model.countControllerCantidadValue =
@@ -3899,7 +3910,9 @@ class _CreateReadInventarioWidgetState extends State<CreateReadInventarioWidget>
                                                                 FFUploadedFile(
                                                                     bytes: Uint8List
                                                                         .fromList(
-                                                                            []));
+                                                                            []),
+                                                                    originalFilename:
+                                                                        '');
                                                             _model.uploadedFileUrl_uploadDataVqa =
                                                                 '';
                                                           });

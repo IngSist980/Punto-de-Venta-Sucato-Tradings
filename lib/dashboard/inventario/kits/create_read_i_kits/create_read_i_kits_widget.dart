@@ -78,6 +78,8 @@ class _CreateReadIKitsWidgetState extends State<CreateReadIKitsWidget>
 
     _model.descripcionTextController ??= TextEditingController();
     _model.descripcionFocusNode ??= FocusNode();
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -747,9 +749,13 @@ class _CreateReadIKitsWidgetState extends State<CreateReadIKitsWidget>
                                                             _model
                                                                 .dropDownEstadoValueController
                                                                 ?.reset();
+                                                            _model.dropDownEstadoValue =
+                                                                null;
                                                             _model
                                                                 .dropDownCaducidadValueController
                                                                 ?.reset();
+                                                            _model.dropDownCaducidadValue =
+                                                                null;
                                                           });
                                                           safeSetState(() {
                                                             _model

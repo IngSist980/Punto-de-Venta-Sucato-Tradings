@@ -52,6 +52,8 @@ class _InventarioMenuWidgetState extends State<InventarioMenuWidget>
         ],
       ),
     });
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

@@ -29,7 +29,7 @@ class CreateReadEmpleadosModel
       choiceChipsValueController?.value = val != null ? [val] : [];
   bool isDataUploading_uploadDataHi1 = false;
   FFUploadedFile uploadedLocalFile_uploadDataHi1 =
-      FFUploadedFile(bytes: Uint8List.fromList([]));
+      FFUploadedFile(bytes: Uint8List.fromList([]), originalFilename: '');
   String uploadedFileUrl_uploadDataHi1 = '';
 
   // State field(s) for Estado widget.

@@ -34,6 +34,8 @@ class _ADM002RecoveryPassWidgetState extends State<ADM002RecoveryPassWidget> {
 
     _model.mailTextController ??= TextEditingController();
     _model.mailFocusNode ??= FocusNode();
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

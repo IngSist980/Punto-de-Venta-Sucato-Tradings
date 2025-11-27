@@ -72,6 +72,8 @@ class _CreateReadEmpleadosWidgetState extends State<CreateReadEmpleadosWidget>
 
     _model.passTextController ??= TextEditingController();
     _model.passFocusNode ??= FocusNode();
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -1002,6 +1004,8 @@ class _CreateReadEmpleadosWidgetState extends State<CreateReadEmpleadosWidget>
                                                                       ?.width,
                                                                   blurHash: m
                                                                       .blurHash,
+                                                                  originalFilename:
+                                                                      m.originalFilename,
                                                                 ))
                                                             .toList();
 
@@ -2239,7 +2243,9 @@ class _CreateReadEmpleadosWidgetState extends State<CreateReadEmpleadosWidget>
                                                     _model.uploadedLocalFile_uploadDataHi1 =
                                                         FFUploadedFile(
                                                             bytes: Uint8List
-                                                                .fromList([]));
+                                                                .fromList([]),
+                                                            originalFilename:
+                                                                '');
                                                     _model.uploadedFileUrl_uploadDataHi1 =
                                                         '';
                                                   });

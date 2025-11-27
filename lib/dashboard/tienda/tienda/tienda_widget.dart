@@ -31,6 +31,8 @@ class _TiendaWidgetState extends State<TiendaWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => TiendaModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

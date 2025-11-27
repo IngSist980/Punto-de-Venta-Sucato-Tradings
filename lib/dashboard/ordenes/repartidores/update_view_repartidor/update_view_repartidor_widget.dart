@@ -58,6 +58,8 @@ class _UpdateViewRepartidorWidgetState
     _model.placaTextController ??=
         TextEditingController(text: widget.repartidorDoc?.placa);
     _model.placaFocusNode ??= FocusNode();
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

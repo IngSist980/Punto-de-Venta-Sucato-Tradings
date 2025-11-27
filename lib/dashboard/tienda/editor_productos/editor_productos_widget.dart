@@ -46,6 +46,8 @@ class _EditorProductosWidgetState extends State<EditorProductosWidget> {
           .cast<ProductosOrdenesClientesStruct>();
       safeSetState(() {});
     });
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

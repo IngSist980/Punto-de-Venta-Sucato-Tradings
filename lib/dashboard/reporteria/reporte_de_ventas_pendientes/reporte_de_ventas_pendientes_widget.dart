@@ -31,6 +31,8 @@ class _ReporteDeVentasPendientesWidgetState
   void initState() {
     super.initState();
     _model = createModel(context, () => ReporteDeVentasPendientesModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

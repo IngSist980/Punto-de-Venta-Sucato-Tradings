@@ -39,6 +39,8 @@ class _ListClienteFrecuentesWidgetState
 
     _model.buscarTextController ??= TextEditingController();
     _model.buscarFocusNode ??= FocusNode();
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

@@ -31,6 +31,8 @@ class _ReporteComprasProveedoresWidgetState
   void initState() {
     super.initState();
     _model = createModel(context, () => ReporteComprasProveedoresModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

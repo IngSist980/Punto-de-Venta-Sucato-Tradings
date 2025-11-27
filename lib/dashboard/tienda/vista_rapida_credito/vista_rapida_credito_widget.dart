@@ -53,6 +53,8 @@ class _VistaRapidaCreditoWidgetState extends State<VistaRapidaCreditoWidget> {
     _model.estadoFocusNode ??= FocusNode();
 
     _model.canjeadoElFocusNode ??= FocusNode();
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

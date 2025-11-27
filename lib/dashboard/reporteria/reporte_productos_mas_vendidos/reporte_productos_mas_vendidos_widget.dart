@@ -31,6 +31,8 @@ class _ReporteProductosMasVendidosWidgetState
   void initState() {
     super.initState();
     _model = createModel(context, () => ReporteProductosMasVendidosModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

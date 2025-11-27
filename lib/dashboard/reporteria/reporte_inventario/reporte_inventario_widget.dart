@@ -30,6 +30,8 @@ class _ReporteInventarioWidgetState extends State<ReporteInventarioWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => ReporteInventarioModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

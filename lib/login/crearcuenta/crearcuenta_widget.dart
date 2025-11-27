@@ -46,6 +46,8 @@ class _CrearcuentaWidgetState extends State<CrearcuentaWidget> {
 
     _model.repasswordTextController ??= TextEditingController();
     _model.repasswordFocusNode ??= FocusNode();
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

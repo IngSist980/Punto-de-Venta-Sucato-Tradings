@@ -422,6 +422,8 @@ class _UpdateViewProductosWidgetState extends State<UpdateViewProductosWidget>
                                                                     ?.width,
                                                                 blurHash:
                                                                     m.blurHash,
+                                                                originalFilename:
+                                                                    m.originalFilename,
                                                               ))
                                                           .toList();
 

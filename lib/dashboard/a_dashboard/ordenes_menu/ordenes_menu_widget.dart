@@ -52,6 +52,8 @@ class _OrdenesMenuWidgetState extends State<OrdenesMenuWidget>
         ],
       ),
     });
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

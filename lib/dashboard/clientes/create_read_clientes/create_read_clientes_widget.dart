@@ -78,6 +78,7 @@ class _CreateReadClientesWidgetState extends State<CreateReadClientesWidget>
     _model.telefono2FocusNode ??= FocusNode();
 
     _model.telefono2Mask = MaskTextInputFormatter(mask: '+506 ########');
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -2363,6 +2364,8 @@ class _CreateReadClientesWidgetState extends State<CreateReadClientesWidget>
                                                         _model
                                                             .dropDownCategoriaValueController
                                                             ?.reset();
+                                                        _model.dropDownCategoriaValue =
+                                                            null;
                                                       });
                                                       await actions
                                                           .customToastification(

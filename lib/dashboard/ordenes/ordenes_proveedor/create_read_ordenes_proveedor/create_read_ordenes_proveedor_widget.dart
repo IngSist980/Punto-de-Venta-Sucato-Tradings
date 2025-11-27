@@ -1938,6 +1938,8 @@ class _CreateReadOrdenesProveedorWidgetState
                                                       _model
                                                           .proveedorDrownValueController
                                                           ?.reset();
+                                                      _model.proveedorDrownValue =
+                                                          null;
                                                     });
                                                   }),
                                                   Future(() async {

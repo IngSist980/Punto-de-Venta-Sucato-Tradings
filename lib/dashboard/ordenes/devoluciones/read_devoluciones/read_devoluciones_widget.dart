@@ -1,4 +1,5 @@
 import '/backend/backend.dart';
+import '/componentes/empty_list/empty_list_widget.dart';
 import '/dashboard/ordenes/devoluciones/view_devoluciones/view_devoluciones_widget.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
@@ -36,6 +37,8 @@ class _ReadDevolucionesWidgetState extends State<ReadDevolucionesWidget> {
 
     _model.buscarTextController ??= TextEditingController();
     _model.buscarFocusNode ??= FocusNode();
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -339,6 +342,11 @@ class _ReadDevolucionesWidgetState extends State<ReadDevolucionesWidget> {
                             }
                             List<DevolucionesRecord>
                                 listViewDevolucionesRecordList = snapshot.data!;
+                            if (listViewDevolucionesRecordList.isEmpty) {
+                              return Center(
+                                child: EmptyListWidget(),
+                              );
+                            }
 
                             return ListView.separated(
                               padding: EdgeInsets.zero,

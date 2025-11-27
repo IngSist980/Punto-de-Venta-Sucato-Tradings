@@ -87,6 +87,8 @@ class _VerDescripcionWidgetState extends State<VerDescripcionWidget>
         ],
       ),
     });
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

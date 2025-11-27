@@ -32,6 +32,8 @@ class _WidgetBuilderWidgetState extends State<WidgetBuilderWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => WidgetBuilderModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

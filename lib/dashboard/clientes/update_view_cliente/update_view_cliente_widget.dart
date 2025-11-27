@@ -71,6 +71,7 @@ class _UpdateViewClienteWidgetState extends State<UpdateViewClienteWidget> {
     _model.telefono2FocusNode ??= FocusNode();
 
     _model.telefono2Mask = MaskTextInputFormatter(mask: '+506 ########');
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

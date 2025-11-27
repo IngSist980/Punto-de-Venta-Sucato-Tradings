@@ -36,6 +36,8 @@ class _AsignarDespachosWidgetState extends State<AsignarDespachosWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => AsignarDespachosModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

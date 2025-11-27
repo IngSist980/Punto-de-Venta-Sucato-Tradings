@@ -82,6 +82,8 @@ class _HomeMenuWidgetState extends State<HomeMenuWidget>
         ],
       ),
     });
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

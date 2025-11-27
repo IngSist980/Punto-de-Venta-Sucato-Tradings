@@ -52,6 +52,8 @@ class _ReporteriaMenuWidgetState extends State<ReporteriaMenuWidget>
         ],
       ),
     });
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

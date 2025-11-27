@@ -112,6 +112,8 @@ class _CreateReadProveedorWidgetState extends State<CreateReadProveedorWidget>
         ],
       ),
     });
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -2618,9 +2620,13 @@ class _CreateReadProveedorWidgetState extends State<CreateReadProveedorWidget>
                                                       _model
                                                           .dropDownIntervaloValueController
                                                           ?.reset();
+                                                      _model.dropDownIntervaloValue =
+                                                          null;
                                                       _model
                                                           .dropDownEstadoValueController
                                                           ?.reset();
+                                                      _model.dropDownEstadoValue =
+                                                          null;
                                                     });
                                                   }),
                                                   Future(() async {

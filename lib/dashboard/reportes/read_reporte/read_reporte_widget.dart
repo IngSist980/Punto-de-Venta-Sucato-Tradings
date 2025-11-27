@@ -29,6 +29,8 @@ class _ReadReporteWidgetState extends State<ReadReporteWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => ReadReporteModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

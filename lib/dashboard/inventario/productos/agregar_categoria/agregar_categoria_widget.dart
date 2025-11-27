@@ -32,6 +32,8 @@ class _AgregarCategoriaWidgetState extends State<AgregarCategoriaWidget> {
 
     _model.catTextController ??= TextEditingController();
     _model.catFocusNode ??= FocusNode();
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

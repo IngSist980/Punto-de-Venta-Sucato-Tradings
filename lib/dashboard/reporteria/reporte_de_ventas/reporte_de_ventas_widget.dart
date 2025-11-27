@@ -29,6 +29,8 @@ class _ReporteDeVentasWidgetState extends State<ReporteDeVentasWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => ReporteDeVentasModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

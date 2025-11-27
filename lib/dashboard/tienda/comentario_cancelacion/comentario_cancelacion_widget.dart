@@ -40,6 +40,8 @@ class _ComentarioCancelacionWidgetState
 
     _model.comentarioOrdenTextController ??= TextEditingController();
     _model.comentarioOrdenFocusNode ??= FocusNode();
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

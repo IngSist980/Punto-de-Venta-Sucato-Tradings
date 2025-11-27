@@ -39,6 +39,8 @@ class _CajaCerradaWidgetState extends State<CajaCerradaWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => CajaCerradaModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

@@ -42,6 +42,8 @@ class _ReadPedidosWidgetState extends State<ReadPedidosWidget> {
 
     _model.buscarTextController ??= TextEditingController();
     _model.buscarFocusNode ??= FocusNode();
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -393,6 +395,7 @@ class _ReadPedidosWidgetState extends State<ReadPedidosWidget> {
                                       safeSetState(() {
                                         _model.dropDownEstadoValueController
                                             ?.reset();
+                                        _model.dropDownEstadoValue = null;
                                       });
                                     },
                                   ),
@@ -1327,27 +1330,58 @@ class _ReadPedidosWidgetState extends State<ReadPedidosWidget> {
                                                                   MainAxisSize
                                                                       .max,
                                                               children: [
-                                                                FlutterFlowIconButton(
-                                                                  borderRadius:
-                                                                      8.0,
-                                                                  buttonSize:
-                                                                      32.0,
-                                                                  fillColor: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .accent1,
-                                                                  icon: Icon(
-                                                                    Icons
-                                                                        .visibility,
-                                                                    color: FlutterFlowTheme.of(
+                                                                Container(
+                                                                  decoration:
+                                                                      BoxDecoration(),
+                                                                  child:
+                                                                      FlutterFlowIconButton(
+                                                                    borderRadius:
+                                                                        8.0,
+                                                                    buttonSize:
+                                                                        32.0,
+                                                                    fillColor: FlutterFlowTheme.of(
                                                                             context)
-                                                                        .info,
-                                                                    size: 16.0,
+                                                                        .accent1,
+                                                                    icon: Icon(
+                                                                      Icons
+                                                                          .visibility,
+                                                                      color: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .info,
+                                                                      size:
+                                                                          16.0,
+                                                                    ),
+                                                                    onPressed:
+                                                                        () async {
+                                                                      context
+                                                                          .pushNamed(
+                                                                        FacturaWidget
+                                                                            .routeName,
+                                                                        queryParameters:
+                                                                            {
+                                                                          'orden':
+                                                                              serializeParam(
+                                                                            flexOdenCompraRecord,
+                                                                            ParamType.Document,
+                                                                          ),
+                                                                        }.withoutNulls,
+                                                                        extra: <String,
+                                                                            dynamic>{
+                                                                          'orden':
+                                                                              flexOdenCompraRecord,
+                                                                          kTransitionInfoKey:
+                                                                              TransitionInfo(
+                                                                            hasTransition:
+                                                                                true,
+                                                                            transitionType:
+                                                                                PageTransitionType.fade,
+                                                                            duration:
+                                                                                Duration(milliseconds: 500),
+                                                                          ),
+                                                                        },
+                                                                      );
+                                                                    },
                                                                   ),
-                                                                  onPressed:
-                                                                      () {
-                                                                    print(
-                                                                        'IconButton pressed ...');
-                                                                  },
                                                                 ),
                                                                 Text(
                                                                   'Ver',

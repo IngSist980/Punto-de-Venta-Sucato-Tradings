@@ -31,6 +31,8 @@ class _ReporteDeVentasHoyWidgetState extends State<ReporteDeVentasHoyWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => ReporteDeVentasHoyModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

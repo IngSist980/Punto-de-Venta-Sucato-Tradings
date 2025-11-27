@@ -728,7 +728,7 @@ class _TiendaState extends State<Tienda> {
                     ),
                     SizedBox(width: 12),
                     Text(
-                      'Realizar Pedido',
+                      'Actualizar Pedido',
                       style: FlutterFlowTheme.of(context).titleSmall.override(
                             fontFamily: 'Readex Pro',
                             color: Colors.white,

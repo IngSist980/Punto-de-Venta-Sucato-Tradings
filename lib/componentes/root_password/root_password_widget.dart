@@ -38,6 +38,8 @@ class _RootPasswordWidgetState extends State<RootPasswordWidget> {
     _model = createModel(context, () => RootPasswordModel());
 
     _model.pinCodeFocusNode ??= FocusNode();
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

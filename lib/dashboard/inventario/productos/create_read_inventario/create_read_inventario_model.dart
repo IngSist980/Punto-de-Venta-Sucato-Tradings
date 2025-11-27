@@ -44,7 +44,7 @@ class CreateReadInventarioModel
   late FlutterFlowDynamicModels<VerDescripcionModel> verDescripcionModels;
   bool isDataUploading_uploadDataVqa = false;
   FFUploadedFile uploadedLocalFile_uploadDataVqa =
-      FFUploadedFile(bytes: Uint8List.fromList([]));
+      FFUploadedFile(bytes: Uint8List.fromList([]), originalFilename: '');
   String uploadedFileUrl_uploadDataVqa = '';
 
   // State field(s) for Estado widget.

@@ -1,0 +1,166 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /user/{document} {
+      allow create: if true;
+      allow read: if request.auth != null;
+      allow write: if request.auth != null;
+      allow delete: if request.auth != null;
+    }
+
+    match /ClientesFrecuentes/{document} {
+      allow create: if request.auth != null;
+      allow read: if request.auth != null;
+      allow write: if request.auth != null;
+      allow delete: if request.auth != null;
+    }
+
+    match /loginAttempts/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if false;
+      allow delete: if false;
+    }
+
+    match /PuntoDeVenta/{document} {
+      allow create: if request.auth != null;
+      allow read: if request.auth != null;
+      allow write: if request.auth != null;
+      allow delete: if request.auth != null;
+    }
+
+    match /PuntoDeVenta/{parent}/Productos/{document} {
+      allow create: if request.auth != null;
+      allow read: if request.auth != null;
+      allow write: if request.auth != null;
+      allow delete: if request.auth != null;
+    }
+
+    match /{path=**}/Productos/{document} {
+      allow read: if request.auth != null;
+    }
+
+
+    match /PuntoDeVenta/{parent}/Categorias/{document} {
+      allow create: if request.auth != null;
+      allow read: if request.auth != null;
+      allow write: if request.auth != null;
+      allow delete: if request.auth != null;
+    }
+
+    match /{path=**}/Categorias/{document} {
+      allow read: if request.auth != null;
+    }
+
+
+    match /PuntoDeVenta/{parent}/Proveedores/{document} {
+      allow create: if request.auth != null;
+      allow read: if request.auth != null;
+      allow write: if request.auth != null;
+      allow delete: if request.auth != null;
+    }
+
+    match /{path=**}/Proveedores/{document} {
+      allow read: if request.auth != null;
+    }
+
+
+    match /PuntoDeVenta/{parent}/Kits/{document} {
+      allow create: if request.auth != null;
+      allow read: if request.auth != null;
+      allow write: if request.auth != null;
+      allow delete: if request.auth != null;
+    }
+
+    match /{path=**}/Kits/{document} {
+      allow read: if request.auth != null;
+    }
+
+
+    match /PuntoDeVenta/{parent}/ProductosVendidos/{document} {
+      allow create: if request.auth != null;
+      allow read: if request.auth != null;
+      allow write: if request.auth != null;
+      allow delete: if request.auth != null;
+    }
+
+    match /{path=**}/ProductosVendidos/{document} {
+      allow read: if request.auth != null;
+    }
+
+
+    match /PuntoDeVenta/{parent}/OrdenesProveedor/{document} {
+      allow create: if request.auth != null;
+      allow read: if request.auth != null;
+      allow write: if request.auth != null;
+      allow delete: if request.auth != null;
+    }
+
+    match /{path=**}/OrdenesProveedor/{document} {
+      allow read: if request.auth != null;
+    }
+
+
+    match /PuntoDeVenta/{parent}/Devoluciones/{document} {
+      allow create: if request.auth != null;
+      allow read: if request.auth != null;
+      allow write: if request.auth != null;
+      allow delete: if request.auth != null;
+    }
+
+    match /{path=**}/Devoluciones/{document} {
+      allow read: if request.auth != null;
+    }
+
+
+    match /PuntoDeVenta/{parent}/CreditosDevoluciones/{document} {
+      allow create: if request.auth != null;
+      allow read: if request.auth != null;
+      allow write: if request.auth != null;
+      allow delete: if request.auth != null;
+    }
+
+    match /{path=**}/CreditosDevoluciones/{document} {
+      allow read: if request.auth != null;
+    }
+
+
+    match /PuntoDeVenta/{parent}/OdenCompra/{document} {
+      allow create: if request.auth != null;
+      allow read: if request.auth != null;
+      allow write: if request.auth != null;
+      allow delete: if request.auth != null;
+    }
+
+    match /{path=**}/OdenCompra/{document} {
+      allow read: if request.auth != null;
+    }
+
+
+    match /PuntoDeVenta/{parent}/Repartidor/{document} {
+      allow create: if request.auth != null;
+      allow read: if request.auth != null;
+      allow write: if request.auth != null;
+      allow delete: if request.auth != null;
+    }
+
+    match /{path=**}/Repartidor/{document} {
+      allow read: if request.auth != null;
+    }
+
+
+    match /AjustesApp/{document} {
+      allow create: if request.auth != null;
+      allow read: if request.auth != null;
+      allow write: if request.auth != null;
+      allow delete: if request.auth != null;
+    }
+
+    match /PromocionesDescuentos/{document} {
+      allow create: if request.auth != null;
+      allow read: if request.auth != null;
+      allow write: if request.auth != null;
+      allow delete: if request.auth != null;
+    }
+  }
+}

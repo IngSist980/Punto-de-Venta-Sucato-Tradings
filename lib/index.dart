@@ -1,0 +1,52 @@
+// Export pages
+export '/login/a_d_m_001_iniciar_sesion/a_d_m001_iniciar_sesion_widget.dart'
+    show ADM001IniciarSesionWidget;
+export '/login/crearcuenta/crearcuenta_widget.dart' show CrearcuentaWidget;
+export '/login/a_d_m_002_recovery_pass/a_d_m002_recovery_pass_widget.dart'
+    show ADM002RecoveryPassWidget;
+export '/dashboard/a_dashboard/dashboard/dashboard_widget.dart'
+    show DashboardWidget;
+export '/dashboard/clientes/create_read_clientes/create_read_clientes_widget.dart'
+    show CreateReadClientesWidget;
+export '/dashboard/empleados/create_read_empleados/create_read_empleados_widget.dart'
+    show CreateReadEmpleadosWidget;
+export '/dashboard/inventario/productos/create_read_inventario/create_read_inventario_widget.dart'
+    show CreateReadInventarioWidget;
+export '/dashboard/inventario/proveedores/create_read_proveedor/create_read_proveedor_widget.dart'
+    show CreateReadProveedorWidget;
+export '/dashboard/inventario/kits/create_read_i_kits/create_read_i_kits_widget.dart'
+    show CreateReadIKitsWidget;
+export '/dashboard/reportes/read_reporte/read_reporte_widget.dart'
+    show ReadReporteWidget;
+export '/dashboard/ordenes/ordenes_proveedor/create_read_ordenes_proveedor/create_read_ordenes_proveedor_widget.dart'
+    show CreateReadOrdenesProveedorWidget;
+export '/dashboard/tienda/tienda/tienda_widget.dart' show TiendaWidget;
+export '/dashboard/tienda/create_pedido/create_pedido_widget.dart'
+    show CreatePedidoWidget;
+export '/dashboard/tienda/read_pedidos/read_pedidos_widget.dart'
+    show ReadPedidosWidget;
+export '/dashboard/tienda/productos_en_orden/productos_en_orden_widget.dart'
+    show ProductosEnOrdenWidget;
+export '/dashboard/tienda/editor_productos/editor_productos_widget.dart'
+    show EditorProductosWidget;
+export '/dashboard/tienda/factura/factura_widget.dart' show FacturaWidget;
+export '/dashboard/ordenes/repartidores/create_read_repartidor/create_read_repartidor_widget.dart'
+    show CreateReadRepartidorWidget;
+export '/dashboard/ordenes/asignar_ordenes/despachos/despachos_widget.dart'
+    show DespachosWidget;
+export '/dashboard/ordenes/devoluciones/read_devoluciones/read_devoluciones_widget.dart'
+    show ReadDevolucionesWidget;
+export '/dashboard/reporteria/reporte_de_ventas/reporte_de_ventas_widget.dart'
+    show ReporteDeVentasWidget;
+export '/dashboard/reporteria/reporte_de_ventas_pendientes/reporte_de_ventas_pendientes_widget.dart'
+    show ReporteDeVentasPendientesWidget;
+export '/dashboard/reporteria/reporte_productos_mas_vendidos/reporte_productos_mas_vendidos_widget.dart'
+    show ReporteProductosMasVendidosWidget;
+export '/dashboard/reporteria/reporte_inventario/reporte_inventario_widget.dart'
+    show ReporteInventarioWidget;
+export '/dashboard/reporteria/reporte_compras_proveedores/reporte_compras_proveedores_widget.dart'
+    show ReporteComprasProveedoresWidget;
+export '/dashboard/a_dashboard/caja_cerrada/caja_cerrada_widget.dart'
+    show CajaCerradaWidget;
+export '/dashboard/a_dashboard/reporte_de_ventas_hoy/reporte_de_ventas_hoy_widget.dart'
+    show ReporteDeVentasHoyWidget;

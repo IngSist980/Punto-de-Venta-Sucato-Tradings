@@ -1,0 +1,170 @@
+{
+  "project_info": {
+    "project_number": "430704273900",
+    "project_id": "almacen-b6f67",
+    "storage_bucket": "almacen-b6f67.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:430704273900:android:f0b90af7a6b271822138c9",
+        "android_client_info": {
+          "package_name": "com.Compania.almacen"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "430704273900-ppiuubpkq3dpp5ac56ibpnv4hgclo9nt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDKLl3oupe4yJOoy_fO1Kp4pCgFcFfN7NM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "430704273900-ppiuubpkq3dpp5ac56ibpnv4hgclo9nt.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "430704273900-2ulhpp4e6ic5t3ca9b7ect8hg238pik1.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.mycompany.puntodeventasucatotradings"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:430704273900:android:abaaf02bf5c774342138c9",
+        "android_client_info": {
+          "package_name": "com.Company.almacen"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "430704273900-ccppbdcu8m4sh21a9h504ahpbu22c2k4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.Company.almacen",
+            "certificate_hash": "9bbb3186b2189ef16d8f272bdab59362c395cbb4"
+          }
+        },
+        {
+          "client_id": "430704273900-ppiuubpkq3dpp5ac56ibpnv4hgclo9nt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDKLl3oupe4yJOoy_fO1Kp4pCgFcFfN7NM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "430704273900-ppiuubpkq3dpp5ac56ibpnv4hgclo9nt.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "430704273900-2ulhpp4e6ic5t3ca9b7ect8hg238pik1.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.mycompany.puntodeventasucatotradings"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:430704273900:android:4cb755f8a8aca7682138c9",
+        "android_client_info": {
+          "package_name": "com.mycompany.gimnasio"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "430704273900-ppiuubpkq3dpp5ac56ibpnv4hgclo9nt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDKLl3oupe4yJOoy_fO1Kp4pCgFcFfN7NM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "430704273900-ppiuubpkq3dpp5ac56ibpnv4hgclo9nt.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "430704273900-2ulhpp4e6ic5t3ca9b7ect8hg238pik1.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.mycompany.puntodeventasucatotradings"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:430704273900:android:cc797e68a1ac2f3f2138c9",
+        "android_client_info": {
+          "package_name": "com.mycompany.puntodeventasucatotradings"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "430704273900-uh9mcl9erc57evut7d2l3834m5obte1r.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mycompany.puntodeventasucatotradings",
+            "certificate_hash": "9bbb3186b2189ef16d8f272bdab59362c395cbb4"
+          }
+        },
+        {
+          "client_id": "430704273900-ppiuubpkq3dpp5ac56ibpnv4hgclo9nt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDKLl3oupe4yJOoy_fO1Kp4pCgFcFfN7NM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "430704273900-ppiuubpkq3dpp5ac56ibpnv4hgclo9nt.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "430704273900-2ulhpp4e6ic5t3ca9b7ect8hg238pik1.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.mycompany.puntodeventasucatotradings"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
